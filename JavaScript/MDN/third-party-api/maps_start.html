@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Google Maps example customized</title>
+
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyD5GxLMP1uppqicnk2_t8DRXj1MsXA2ACY"></script>
+    <script>
+    if("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var latlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+        var myOptions = {
+          zoom: 8,
+          center: latlng,
+          mapTypeId: google.maps.MapTypeId.TERRAIN,
+          disableDefaultUI: true,
+		  zoomControl: true,
+		  mapTypeControl: true,
+		  scaleControl: true
+        }
+        var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		
+		var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+		var marker = new google.maps.Marker({
+			position: latlng,
+			icon: iconBase + 'marina.png',
+			map: map
+		});
+		
+		var contentString = '<div id="content"><h2 id="firstHeading" class="firstHeading">Custom info window</h2><p>This is a cool custom info window.</p></div>';
+		var infowindow = new google.maps.InfoWindow({
+			content: contentString
+		});
+		
+		marker.addListener('click',function(){
+			infowindow.open(map, marker);
+		});
+		
+      });
+    } else {
+      var para = document.createElement('p');
+      para.textContent = 'Argh, no geolocation!';
+      document.body.appendChild(para);
+    }
+    </script>
+    <style>
+      #map_canvas {
+        width: 600px;
+        height: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Customized maps example</h1>
+    <div id="map_canvas"></div>
+  </body>
+</html>

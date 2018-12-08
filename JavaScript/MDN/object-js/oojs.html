@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Object-oriented JavaScript example</title>
+  </head>
+
+  <body>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools</a> for more information).</p>
+
+  </body>
+
+    <script>
+		// define a person with a normal function
+		/*
+		function createNewPerson(name){
+			var obj = {};
+			obj.name = name;
+			obj.greeting = function(){
+				alert('Hi! I\'m '+this.name+' .');
+			};
+			return obj;
+		}
+		*/
+		/*
+		function Person(name){
+			this.name = name;
+			this.greeting = function(){
+				alert('Hi! I\'m '+this.name+'. ');
+			}
+		}
+		var person1 = new Person('Bob');
+		var person2 = new Person('Sarsh');
+		*/
+		function Person(first, last, age, gender, interests){
+			this.name = {
+				'first': first,
+				'last': last
+			};
+			this.age = age;
+			this.gender = gender;
+			this.interests = interests;
+			this.bio = function(){
+				var gender_str = '';
+				var interest_str ='';
+				if (this.gender === 'male'){
+					gender_str = 'He';
+				}else if (this.gender === 'female'){
+					gender_str = 'She';
+				}else{
+					gender_str = 'Who';
+				}
+				for (var i=0;i<interests.length;i++){
+					if (i === interests.length-1){
+						interest_str += interests[i];
+					}else{
+						interest_str += interests[i]+',';
+					}
+				}
+				alert(this.name.first + ' ' + this.name.last + ' is '+this.age+' years old. '+gender_str+' likes '+interest_str+'.');
+			};
+			this.greeting = function(){
+				alert('Hi! I\'m '+this.name.first+'.');
+			};
+		}
+		var person1 = new Person('Bob', 'Smith', 32, 'male', ['music','skining']);
+		var person2 = new Person('Bob02', 'Smith02', 12, 'female', ['music','skining','drowing']);
+		
+		Person.prototype.farewell = function(){
+			alert(this.name.first + ' has left the building.Bye for now!');
+		}
+    </script>
+</html>
