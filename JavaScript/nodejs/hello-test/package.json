@@ -1,0 +1,22 @@
+{
+    "name": "hello-koa2",
+    "version": "1.0.0",
+    "description": "Hello Koa 2 example with async",
+    "main": "app.js",
+    "scripts": {
+        "test": "mocha "
+    },
+    "keywords": [
+        "koa",
+        "async"
+    ],
+    "author": "lifei",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hefrankeleyn/learning-area.git"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "mocha": "^5.2.0"
+    }
+}
