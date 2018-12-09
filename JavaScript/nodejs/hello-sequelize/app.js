@@ -15,7 +15,7 @@ var sequelize  = new Sequelize(config.database, config.username, config.password
 });
 
 // 定义student模型，告诉Sequelize如何映射数据库表
-var Student = sequelize.define('student', {
+var Student = sequelize.define('students', {
     id: {
         type: Sequelize.STRING(50),
         primaryKey: true
@@ -32,7 +32,7 @@ var Student = sequelize.define('student', {
 
 // 使用 Promise 方法操作数据库表
 var now = Date.now();
-/*
+
 Student.create({
     id: 'g-'+now,
     sname: 'aaa',
@@ -45,7 +45,7 @@ Student.create({
 }).catch(function(e){
     console.log('failed: '+e);
 });
-*/
+
 /**
  * 问题修复： sequelize.js - You need to install mysql package manually
  *  npm install --save mysql2
@@ -82,6 +82,7 @@ Student.create({
 */
 
 // 更新数据
+/*
 (async ()=>{
     let s = await Student.findById('d--1544250584015');
     s.sname = 'bcf';
@@ -95,3 +96,4 @@ Student.create({
     let s = await Student.findById('g-1544250130308');
     await s.destroy();
 })();
+*/

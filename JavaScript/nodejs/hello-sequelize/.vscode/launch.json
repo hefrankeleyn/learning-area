@@ -7,8 +7,19 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}/app.js"
+            "name": "Run",
+            "program": "${workspaceFolder}/app-create-table.js",
+            "stopOnEntry": false,
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy", "--use_strict"
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            }
         }
     ]
 }
