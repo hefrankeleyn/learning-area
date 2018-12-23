@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+        function GetXmlHttpObject(){
+            var xmlHttp = null;
+            try{
+                // Firfox, Opera 8+, safari
+                xmlHttp = new XMLHttpRequest();
+            }catch(e){
+                try{
+                    // Internet Explorer
+                    xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                }catch(e){
+                    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+            }
+            return xmlHttp;
+        }
+    </script>
+</body>
+</html>
