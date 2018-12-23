@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ShortcutNotations",
+            "request": "launch",
+            "mainClass": "ShortcutNotations",
+            "projectName": "Algorithm_ea60a841"
+        }
+    ]
+}
