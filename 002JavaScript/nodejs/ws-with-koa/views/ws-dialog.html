@@ -1,0 +1,73 @@
+{% extends "base-generate-mvc.html" %} 
+{% block main %}
+<div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-th-list"></span> Room</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div style="height:400px; overflow-x:hidden; overflow-y:scroll;">
+                            <div id="message-list">
+                                <div style="margin-bottom:25px;" v-for="msg in messages">
+                                    <div v-if="msg.type === 'join' || msg.type === 'left'">
+                                        <div class="media-left">
+                                            <img class="media-object" style="width:20px; height:20px;" v-bind:src="/statics/user.png">
+                                            <!-- <img class="media-object" style="width:20px; height:20px;" v-bind:src="'/static/images/' + msg.user.image + '.png'"> -->
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="media-heading" v-text="msg.data"></h4>
+                                        </div>
+                                    </div>
+                                    <div v-if="msg.type === 'chat'">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <img class="media-object" style="width:48px; height:48px;" v-bind:src="/statics/user.png">
+                                            </div>
+                                            <div class="media-body">
+                                                <h4 class="media-heading" v-text="msg.user.name"></h4>
+                                                <span v-text="msg.data"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <form id="form-chat" action="#0">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="A good day, isn't it?">
+                                    <span class="input-group-btn"><button class="btn btn-default" type="submit">Go</button></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> Users</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div style="height:434px; overflow-x:hidden; overflow-y:scroll;">
+                            <div id="user-list">
+                                <div class="media" v-for="user in users">
+                                    <div class="media-left">
+                                        <!-- <img class="media-object" style="width:20px; height:20px;" v-bind:src="'/static/images/' + user.image + '.png'"> -->
+                                        <img class="media-object" style="width:20px; height:20px;" v-bind:src="'/statics/message.png'">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading" v-text="user.name + ' (' + user.id + ')'"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+<script src="/statics/ws-dialog.js"></script>
+{% endblock %}
