@@ -15,12 +15,13 @@
         # 函数、类、关键字不区分大小写
         echo 'hello';
         EcHo 'world';
+        ECHO 'PHP';
         ECHO '<br>';
         /*
             变量区分大小写
         */
         $color="red";
-        echo "my car is " . $color ."<br>";
+        echo "my car is " . $color . "<br>";
         //echo "my hour is " . $Color . "</br>"
        // echo 'my boat is ' . $COLOR . </br>
 
@@ -29,10 +30,11 @@
        $b = 25;
        $c = $a+$b;
        echo $c;
-       echo "<br/>";
+	   echo "<br>";
 
        # 函数
        function testFun(){
+            //$a = 0;
             static $a = 0;
             echo $a;
             echo "<br/>";
@@ -45,35 +47,22 @@
        echo "<br>";
        // echo 和print
        echo "<h2>PHP is fun</h2>";
-       echo "This"," string ","was mad ","with multiple parameters";
-
+       echo "This"," string ","was mad ","with multiple parameters<br>";
        $txt1 = "PHP";
        $cars = array("aaa","bbb","ccc");
 
-       echo "I learning $txt1";
+       echo "I learning $txt1<br>";
        echo "My car is a {$cars[0]}";
-
-       print "$txt1 is fun.<br>";
-       print "I'm learning php.";
-
+       print "$txt1 is fun.";
+       print "I'm learning php.<br>";
+	   print "My car is a {$cars[0]}";
        $p1 = print("good<br>");
        echo $p1;
-
-       class Car{
-           var $color;
-           function Car($color="green"){
-               $this->color = $color;
-           }
-
-           function whatColor(){
-               return $this->color;
-           }
-       }
        $a = "aaa";
+	   # 
        var_dump($a);
-       # 常量
-       define("GREENING","dream");
-
+	   define("GREENING","dream");
+	   echo GREENING;
        //  串接
        $b = "bbb<br>";
        $c = $a.$b;
@@ -82,6 +71,5 @@
        $b .= $c;
        echo $b;
     ?>
-
 </body>
 </html>

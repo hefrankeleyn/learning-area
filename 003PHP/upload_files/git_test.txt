@@ -1,0 +1,403 @@
+* b218659 (HEAD -> master) add one sencence.                                   *   5738a2f (origin/master, origin/HEAD) Merge branch 'teamone'
+* 5dafff5 test program about rebase                                            |\
+* 30b9ccf (origin/master, origin/HEAD) I love you.                             | * c973bc0 The file of teamone is a new file
+* 0fb6fcf add two words                                                        * | efe24dc update rebse02
+* c3a79b0 add a \\serverTest.md\ file                                          * | 09acdcc update rebase02
+* a7b0962 Welcome                                                              |/
+* 6583425 add clientTest file                                                  * 643414a create a file rebase02
+* 25d7b1e Welcome masterTest file                                              | * b218659 (HEAD -> master) add one sencence.
+* c8be578 Welcome masterTest                                                   | * 5dafff5 test program about rebase
+* 42d1b8c add two sentence                                                     |/
+* 4b5a86f add a sentence.                                                      * 30b9ccf I love you.
+* 5442fa8 rebase test                                                          * 0fb6fcf add two words
+*   c6a69cb head merge                                                         * c3a79b0 add a \\serverTest.md\ file
+|\                                                                             * a7b0962 Welcome
+| * 9b6ba66 make a change again.                                               * 6583425 add clientTest file
+| * d7d64a1 made a change                                                      * 25d7b1e Welcome masterTest file
+* | ec93811 make a change too.                                                 * c8be578 Welcome masterTest
+* | d413f6b made other changes                                                 * 42d1b8c add two sentence
+|/                                                                             * 4b5a86f add a sentence.
+* 9bd23e3 (tag: v1.0) first file                                               * 5442fa8 rebase test
+* cd22250 Initial commit                                                       *   c6a69cb head merge
+                                                                               |\
+                                                                               | * 9b6ba66 make a change again.
+                                                                               | * d7d64a1 made a change
+                                                                               * | ec93811 make a change too.
+                                                                               * | d413f6b made other changes
+                                                                               |/
+                                                                               * 9bd23e3 (tag: v1.0) first file
+                                                                               * cd22250 Initial commit
+#另一个用户回滚合并之前
+*   cac0e27 (HEAD -> master, origin/master, origin/HEAD) Merge branch 'teamone'* 6b700db (HEAD -> teamone) update rebase02 again
+|\                                                                             | *   cac0e27 (origin/master, origin/HEAD) Merge branch 'teamone'
+| * 1027bce (teamone) update rebase02 again                                    | |\
+* | cb6afba update teamone                                                     |/ /
+|/                                                                             | * 1027bce update rebase02 again
+*   5738a2f Merge branch 'teamone'                                             * | cb6afba (master) update teamone
+|\                                                                             |/
+| * c973bc0 The file of teamone is a new file                                  *   5738a2f Merge branch 'teamone'
+* | efe24dc update rebse02                                                     |\
+* | 09acdcc update rebase02                                                    | * c973bc0 The file of teamone is a new file
+|/                                                                             * | efe24dc update rebse02
+* 643414a create a file rebase02                                               * | 09acdcc update rebase02
+* 30b9ccf I love you.                                                          |/
+* 0fb6fcf add two words                                                        * 643414a create a file rebase02
+* c3a79b0 add a \\serverTest.md\ file                                          * 30b9ccf I love you.
+* a7b0962 Welcome                                                              * 0fb6fcf add two words
+* 6583425 add clientTest file                                                  * c3a79b0 add a \\serverTest.md\ file
+* 25d7b1e Welcome masterTest file                                              * a7b0962 Welcome
+* c8be578 Welcome masterTest                                                   * 6583425 add clientTest file
+* 42d1b8c add two sentence                                                     * 25d7b1e Welcome masterTest file
+* 4b5a86f add a sentence.                                                      * c8be578 Welcome masterTest
+* 5442fa8 rebase test                                                          * 42d1b8c add two sentence
+*   c6a69cb head merge                                                         * 4b5a86f add a sentence.
+|\                                                                             * 5442fa8 rebase test
+| * 9b6ba66 make a change again.                                               *   c6a69cb head merge
+| * d7d64a1 made a change                                                      |\
+* | ec93811 make a change too.                                                 | * 9b6ba66 make a change again.
+* | d413f6b made other changes                                                 | * d7d64a1 made a change
+|/                                                                             * | ec93811 make a change too.
+* 9bd23e3 first file                                                           * | d413f6b made other changes
+* cd22250 Initial commit                                                       |/
+                                                                               * 9bd23e3 first file
+                                                                               * cd22250 Initial commit
+
+
+
+
+
+
+
+
+
+
+
+
+* 6b700db (HEAD -> master, teamone) update rebase02 again                      * 6b700db (HEAD -> master, origin/master, origin/HEAD, teamone) update rebase02 again
+| *   cac0e27 (origin/master, origin/HEAD) Merge branch 'teamone'              * cb6afba update teamone
+| |\                                                                           *   5738a2f Merge branch 'teamone'
+|/ /                                                                           |\
+| * 1027bce update rebase02 again                                              | * c973bc0 The file of teamone is a new file
+* | cb6afba update teamone                                                     * | efe24dc update rebse02
+|/                                                                             * | 09acdcc update rebase02
+*   5738a2f Merge branch 'teamone'                                             |/
+|\                                                                             * 643414a create a file rebase02
+| * c973bc0 The file of teamone is a new file                                  * 30b9ccf I love you.
+* | efe24dc update rebse02                                                     * 0fb6fcf add two words
+* | 09acdcc update rebase02                                                    * c3a79b0 add a \\serverTest.md\ file
+|/                                                                             * a7b0962 Welcome
+* 643414a create a file rebase02                                               * 6583425 add clientTest file
+* 30b9ccf I love you.                                                          * 25d7b1e Welcome masterTest file
+* 0fb6fcf add two words                                                        * c8be578 Welcome masterTest
+* c3a79b0 add a \\serverTest.md\ file                                          * 42d1b8c add two sentence
+* a7b0962 Welcome                                                              * 4b5a86f add a sentence.
+* 6583425 add clientTest file                                                  * 5442fa8 rebase test
+* 25d7b1e Welcome masterTest file                                              *   c6a69cb head merge
+* c8be578 Welcome masterTest                                                   |\
+* 42d1b8c add two sentence                                                     | * 9b6ba66 make a change again.
+* 4b5a86f add a sentence.                                                      | * d7d64a1 made a change
+* 5442fa8 rebase test                                                          * | ec93811 make a change too.
+*   c6a69cb head merge                                                         * | d413f6b made other changes
+|\                                                                             |/
+| * 9b6ba66 make a change again.                                               * 9bd23e3 first file
+| * d7d64a1 made a change                                                      * cd22250 Initial commit
+* | ec93811 make a change too.
+* | d413f6b made other changes
+|/
+* 9bd23e3 first file
+* cd22250 Initial commit
+
+
+* 6b700db (HEAD -> master, origin/master, origin/HEAD, teamone) update rebase02 again
+* cb6afba update teamone
+*   5738a2f Merge branch 'teamone'
+|\
+| * c973bc0 The file of teamone is a new file
+* | efe24dc update rebse02
+* | 09acdcc update rebase02
+|/
+* 643414a create a file rebase02
+* 30b9ccf I love you.
+* 0fb6fcf add two words
+* c3a79b0 add a \\serverTest.md\ file
+* a7b0962 Welcome
+* 6583425 add clientTest file
+* 25d7b1e Welcome masterTest file
+* c8be578 Welcome masterTest
+* 42d1b8c add two sentence
+* 4b5a86f add a sentence.
+* 5442fa8 rebase test
+*   c6a69cb head merge
+|\
+| * 9b6ba66 make a change again.
+| * d7d64a1 made a change
+* | ec93811 make a change too.
+* | d413f6b made other changes
+|/
+* 9bd23e3 first file
+* cd22250 Initial commit
+
+
+
+
+
+
+
+
+
+#git_test 在fetch之前
+*   cac0e27 (origin/master, origin/HEAD) Merge branch 'teamone'                * 6b700db (origin/master, origin/HEAD) update rebase02 again
+|\                                                                             * cb6afba update teamone
+| * 1027bce update rebase02 again                                              | *   0f14fbc (HEAD -> master) Merge remote-tracking branch 'origin/master'
+* | cb6afba update teamone                                                     | |\
+|/                                                                             | |/
+| *   0f14fbc (HEAD -> master) Merge remote-tracking branch 'origin/master'    |/|
+| |\                                                                           * |   5738a2f Merge branch 'teamone'
+| |/                                                                           |\ \
+|/|                                                                            | * | c973bc0 The file of teamone is a new file
+* |   5738a2f Merge branch 'teamone'                                           * | | efe24dc update rebse02
+|\ \                                                                           * | | 09acdcc update rebase02
+| * | c973bc0 The file of teamone is a new file                                |/ /
+* | | efe24dc update rebse02                                                   * | 643414a create a file rebase02
+* | | 09acdcc update rebase02                                                  | * b218659 add one sencence.
+|/ /                                                                           | * 5dafff5 test program about rebase
+* | 643414a create a file rebase02                                             |/
+| * b218659 add one sencence.                                                  * 30b9ccf I love you.
+| * 5dafff5 test program about rebase                                          * 0fb6fcf add two words
+|/                                                                             * c3a79b0 add a \\serverTest.md\ file
+* 30b9ccf I love you.                                                          * a7b0962 Welcome
+* 0fb6fcf add two words                                                        * 6583425 add clientTest file
+* c3a79b0 add a \\serverTest.md\ file                                          * 25d7b1e Welcome masterTest file
+* a7b0962 Welcome                                                              * c8be578 Welcome masterTest
+* 6583425 add clientTest file                                                  * 42d1b8c add two sentence
+* 25d7b1e Welcome masterTest file                                              * 4b5a86f add a sentence.
+* c8be578 Welcome masterTest                                                   * 5442fa8 rebase test
+* 42d1b8c add two sentence                                                     *   c6a69cb head merge
+* 4b5a86f add a sentence.                                                      |\
+* 5442fa8 rebase test                                                          | * 9b6ba66 make a change again.
+*   c6a69cb head merge                                                         | * d7d64a1 made a change
+|\                                                                             * | ec93811 make a change too.
+| * 9b6ba66 make a change again.                                               * | d413f6b made other changes
+| * d7d64a1 made a change                                                      |/
+* | ec93811 make a change too.                                                 * 9bd23e3 (tag: v1.0) first file
+* | d413f6b made other changes                                                 * cd22250 Initial commit
+|/
+* 9bd23e3 (tag: v1.0) first file
+* cd22250 Initial commit
+
+
+
+
+* 6b700db (origin/master, origin/HEAD) update rebase02 again
+* cb6afba update teamone
+| *   0f14fbc (HEAD -> master) Merge remote-tracking branch 'origin/master'
+| |\
+| |/
+|/|
+* |   5738a2f Merge branch 'teamone'
+|\ \
+| * | c973bc0 The file of teamone is a new file
+* | | efe24dc update rebse02
+* | | 09acdcc update rebase02
+|/ /
+* | 643414a create a file rebase02
+| * b218659 add one sencence.
+| * 5dafff5 test program about rebase
+|/
+* 30b9ccf I love you.
+* 0fb6fcf add two words
+* c3a79b0 add a \\serverTest.md\ file
+* a7b0962 Welcome
+* 6583425 add clientTest file
+* 25d7b1e Welcome masterTest file
+* c8be578 Welcome masterTest
+* 42d1b8c add two sentence
+* 4b5a86f add a sentence.
+* 5442fa8 rebase test
+*   c6a69cb head merge
+|\
+| * 9b6ba66 make a change again.
+| * d7d64a1 made a change
+* | ec93811 make a change too.
+* | d413f6b made other changes
+|/
+* 9bd23e3 (tag: v1.0) first file
+* cd22250 Initial commit
+
+
+
+
+
+
+
+
+#合并之前                                                                      #合并之后
+*   1a618d5 (HEAD -> master) Merge remote-tracking branch 'origin/master'      * 6262c92 (origin/master, origin/HEAD) add a sencence by other branch
+|\                                                                             * 1cf000e add a file follow by git02
+| *   9edc4c4 (origin/master, origin/HEAD) Merge branch 'teamone'              | *   1a618d5 (HEAD -> master) Merge remote-tracking branch 'origin/master'
+| |\                                                                           | |\
+| | * 35fdc96 add a sencence by other branch                                   | | *   9edc4c4 Merge branch 'teamone'
+| | * 75449f3 add a file follow by git02                                       | | |\
+| * | a57ab87 create a file about rebase                                       | |/ /
+| |/                                                                           |/| |
+* |   6996862 Merge remote-tracking branch 'origin/master'                     | | * 35fdc96 add a sencence by other branch
+|\ \                                                                           | | * 75449f3 add a file follow by git02
+| |/                                                                           * | | a57ab87 create a file about rebase
+| * 6b700db update rebase02 again                                              | |/
+| * cb6afba update teamone                                                     |/|
+* |   0f14fbc Merge remote-tracking branch 'origin/master'                     | *   6996862 Merge remote-tracking branch 'origin/master'
+|\ \                                                                           | |\
+| |/                                                                           | |/
+| *   5738a2f Merge branch 'teamone'                                           |/|
+| |\                                                                           * | 6b700db update rebase02 again
+| | * c973bc0 The file of teamone is a new file                                * | cb6afba update teamone
+| * | efe24dc update rebse02                                                   | *   0f14fbc Merge remote-tracking branch 'origin/master'
+| * | 09acdcc update rebase02                                                  | |\
+| |/                                                                           | |/
+| * 643414a create a file rebase02                                             |/|
+* | b218659 add one sencence.                                                  * |   5738a2f Merge branch 'teamone'
+* | 5dafff5 test program about rebase                                          |\ \
+|/                                                                             | * | c973bc0 The file of teamone is a new file
+* 30b9ccf I love you.                                                          * | | efe24dc update rebse02
+* 0fb6fcf add two words                                                        * | | 09acdcc update rebase02
+* c3a79b0 add a \\serverTest.md\ file                                          |/ /
+* a7b0962 Welcome                                                              * | 643414a create a file rebase02
+* 6583425 add clientTest file                                                  | * b218659 add one sencence.
+* 25d7b1e Welcome masterTest file                                              | * 5dafff5 test program about rebase
+* c8be578 Welcome masterTest                                                   |/
+* 42d1b8c add two sentence                                                     * 30b9ccf I love you.
+* 4b5a86f add a sentence.                                                      * 0fb6fcf add two words
+* 5442fa8 rebase test                                                          * c3a79b0 add a \\serverTest.md\ file
+*   c6a69cb head merge                                                         * a7b0962 Welcome
+|\                                                                             * 6583425 add clientTest file
+| * 9b6ba66 make a change again.                                               * 25d7b1e Welcome masterTest file
+| * d7d64a1 made a change                                                      * c8be578 Welcome masterTest
+* | ec93811 make a change too.                                                 * 42d1b8c add two sentence
+* | d413f6b made other changes                                                 * 4b5a86f add a sentence.
+|/                                                                             * 5442fa8 rebase test
+* 9bd23e3 (tag: v1.0) first file                                               *   c6a69cb head merge
+* cd22250 Initial commit                                                       |\
+                                                                               | * 9b6ba66 make a change again.
+                                                                               | * d7d64a1 made a change
+                                                                               * | ec93811 make a change too.
+                                                                               * | d413f6b made other changes
+                                                                               |/
+                                                                               * 9bd23e3 (tag: v1.0) first file
+                                                                               * cd22250 Initial commit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#git_test                                                                      #git_test02
+* d78c7b1 (HEAD -> master) add one sencence.                                   * 6262c92 (HEAD -> master, origin/master, origin/HEAD, teamone) add a sencence by other branch
+* f27f2dd test program about rebase                                            * 1cf000e add a file follow by git02
+* 6262c92 (origin/master, origin/HEAD) add a sencence by other branch          * a57ab87 create a file about rebase
+* 1cf000e add a file follow by git02                                           * 6b700db update rebase02 again
+* a57ab87 create a file about rebase                                           * cb6afba update teamone
+* 6b700db update rebase02 again                                                *   5738a2f Merge branch 'teamone'
+* cb6afba update teamone                                                       |\
+*   5738a2f Merge branch 'teamone'                                             | * c973bc0 The file of teamone is a new file
+|\                                                                             * | efe24dc update rebse02
+| * c973bc0 The file of teamone is a new file                                  * | 09acdcc update rebase02
+* | efe24dc update rebse02                                                     |/
+* | 09acdcc update rebase02                                                    * 643414a create a file rebase02
+|/                                                                             * 30b9ccf I love you.
+* 643414a create a file rebase02                                               * 0fb6fcf add two words
+* 30b9ccf I love you.                                                          * c3a79b0 add a \\serverTest.md\ file
+* 0fb6fcf add two words                                                        * a7b0962 Welcome
+* c3a79b0 add a \\serverTest.md\ file                                          * 6583425 add clientTest file
+* a7b0962 Welcome                                                              * 25d7b1e Welcome masterTest file
+* 6583425 add clientTest file                                                  * c8be578 Welcome masterTest
+* 25d7b1e Welcome masterTest file                                              * 42d1b8c add two sentence
+* c8be578 Welcome masterTest                                                   * 4b5a86f add a sentence.
+* 42d1b8c add two sentence                                                     * 5442fa8 rebase test
+* 4b5a86f add a sentence.                                                      *   c6a69cb head merge
+* 5442fa8 rebase test                                                          |\
+*   c6a69cb head merge                                                         | * 9b6ba66 make a change again.
+|\                                                                             | * d7d64a1 made a change
+| * 9b6ba66 make a change again.                                               * | ec93811 make a change too.
+| * d7d64a1 made a change                                                      * | d413f6b made other changes
+* | ec93811 make a change too.                                                 |/
+* | d413f6b made other changes                                                 * 9bd23e3 first file
+|/                                                                             * cd22250 Initial commit
+* 9bd23e3 (tag: v1.0) first file
+* cd22250 Initial commit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

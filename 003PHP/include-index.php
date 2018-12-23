@@ -7,10 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <form action="form_post_or_get.php" method="POST">
-        username: <input name="username"/><br>
-        password: <input name="password"/><br>
-        <button type="submit">SUBMIT</button>
-    </form>
+    <h1>Welcome to here.</h1>
+    <?php
+        //include "footera.php";
+        echo "<br>require<br>";
+        require "footera.php";
+        echo "aaa:<br>$color,$car<br>";
+        echo "I have a dream.";
+    ?>
 </body>
 </html>

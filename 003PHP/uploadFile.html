@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <form action="form_post_or_get.php" method="POST">
-        username: <input name="username"/><br>
-        password: <input name="password"/><br>
-        <button type="submit">SUBMIT</button>
+    <form action="uploadFile.php" method="POST" enctype="multipart/form-data">
+        <label for="file">文件名：</label>
+        <input type="file" name="file" id="file"/><br>
+        <button type="submit">提交</button>
     </form>
 </body>
 </html>
