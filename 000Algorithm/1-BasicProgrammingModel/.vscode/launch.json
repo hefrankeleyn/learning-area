@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Exercise24",
+            "request": "launch",
+            "mainClass": "Exercise24",
+            "projectName": "1-BasicProgrammingModel_d11d2994"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Exercise22",
+            "request": "launch",
+            "mainClass": "Exercise22",
+            "projectName": "1-BasicProgrammingModel_d11d2994"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BasicProgrammingModelExercises",
+            "request": "launch",
+            "mainClass": "BasicProgrammingModelExercises",
+            "projectName": "1-BasicProgrammingModel_d11d2994"
+        }
+    ]
+}
