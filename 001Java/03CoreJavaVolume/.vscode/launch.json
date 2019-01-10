@@ -1,0 +1,37 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LotteryArray",
+            "request": "launch",
+            "mainClass": "LotteryArray",
+            "projectName": "03CoreJavaVolume_e53c758c"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CompoundInterest",
+            "request": "launch",
+            "mainClass": "CompoundInterest",
+            "projectName": "03CoreJavaVolume_e53c758c"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StringTest",
+            "request": "launch",
+            "mainClass": "StringTest",
+            "projectName": "03CoreJavaVolume_e53c758c"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DataType",
+            "request": "launch",
+            "mainClass": "DataType"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Datatype",
+            "request": "launch",
+            "mainClass": "Datatype"
+        }
+    ]
+}
