@@ -1,0 +1,61 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ObjectAnalyzerTest",
+            "request": "launch",
+            "mainClass": "inheritance.reflection.object_analyzer.ObjectAnalyzerTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ClassTest",
+            "request": "launch",
+            "mainClass": "ClassTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ReflectionTest",
+            "request": "launch",
+            "mainClass": "inheritance.reflection.ReflectionTest",
+            "args": "java.lang.Double",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - EnumTest",
+            "request": "launch",
+            "mainClass": "inheritance.enums.EnumTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - EqualsTest",
+            "request": "launch",
+            "mainClass": "inheritance.equals.EqualsTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - EqualsTest",
+            "request": "launch",
+            "mainClass": "EqualsTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PersonTest",
+            "request": "launch",
+            "mainClass": "inheritance.abstractclasses.PersonTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ManagerTest",
+            "request": "launch",
+            "mainClass": "inheritance.ManagerTest",
+            "projectName": "CoreJavaVolume1"
+        }
+    ]
+}

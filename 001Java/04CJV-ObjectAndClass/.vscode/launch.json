@@ -1,0 +1,52 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PackageTest",
+            "request": "launch",
+            "mainClass": "PackageTest",
+            "projectName": "04CJV-ObjectAndClass_d6da30f0"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ConstructorTest",
+            "request": "launch",
+            "mainClass": "ConstructorTest",
+            "projectName": "04CJV-ObjectAndClass_d6da30f0"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - AreaTest",
+            "request": "launch",
+            "mainClass": "AreaTest",
+            "projectName": "04CJV-ObjectAndClass_d6da30f0"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ParamTest",
+            "request": "launch",
+            "mainClass": "ParamTest",
+            "projectName": "04CJV-ObjectAndClass_d6da30f0"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StaticTest",
+            "request": "launch",
+            "mainClass": "StaticTest",
+            "projectName": "04CJV-ObjectAndClass_d6da30f0"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Employee",
+            "request": "launch",
+            "mainClass": "Employee",
+            "projectName": "04CJV-ObjectAndClass_d6da30f0"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StaticMethodTest",
+            "request": "launch",
+            "mainClass": "StaticMethodTest"
+        }
+    ]
+}

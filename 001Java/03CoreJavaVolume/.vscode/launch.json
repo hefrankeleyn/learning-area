@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - CalendarTest",
+            "request": "launch",
+            "mainClass": "CalendarTest",
+            "projectName": "03CoreJavaVolume_e53c758c"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - LotteryArray",
             "request": "launch",
             "mainClass": "LotteryArray",
