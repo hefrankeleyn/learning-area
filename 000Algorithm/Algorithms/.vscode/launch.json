@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Exercise1130ArrayExercise",
+            "request": "launch",
+            "mainClass": "basicprogrammingmodel.exercises.Exercise1130ArrayExercise",
+            "projectName": "Algorithms"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Exercise1129EqualKeys",
+            "request": "launch",
+            "mainClass": "basicprogrammingmodel.exercises.Exercise1129EqualKeys",
+            "projectName": "Algorithms"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Exercise1128RemoveDuplicates",
+            "request": "launch",
+            "mainClass": "basicprogrammingmodel.exercises.Exercise1128RemoveDuplicates",
+            "projectName": "Algorithms"
+        }
+    ]
+}
