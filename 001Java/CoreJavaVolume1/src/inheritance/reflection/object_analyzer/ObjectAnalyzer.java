@@ -15,7 +15,14 @@ public class ObjectAnalyzer{
     
     private ArrayList<Object> visited = new ArrayList<>();
     
-    
+    /**
+     * implement self toString() method
+     * 
+     */
+    @Override
+    public String toString() {
+        return new ObjectAnalyzer().toString(this);
+    }
     /**
      * Converts an object to a string representation that lists all fields.
      * @param obj an object
