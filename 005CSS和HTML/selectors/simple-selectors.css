@@ -1,0 +1,74 @@
+/*
+* {
+    padding: 5px;
+    border: 1px solid black;
+    background: rgba(255,0,0,0.25)
+  }
+  */
+/* All p elements are red */
+p {
+    color: red;
+  }
+  
+  /* All div elements are blue */
+  div {
+    color: blue;
+  }
+
+  /* The element with the class "first" is bolded */
+.first {
+    font-weight: bold;
+  }
+  
+  /* All the elements with the class "done" are strikethrough */
+  .done {
+    text-decoration: line-through;
+  }
+
+
+  .base-box {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+    padding: 3px 3px 3px 7px;
+  }
+  
+  .important {
+    font-weight: bold;
+  }
+  
+  .editor-note {
+    background-color: #9999ff;
+    border-left: 6px solid #333399;
+  }
+  
+  .warning {
+    background-color: #ff9999;
+    border-left: 6px solid #993333;
+  }
+
+
+  #polite {
+    font-family: cursive;
+  }
+  
+  #rude {
+    font-family: monospace;
+    text-transform: uppercase;
+  }
+
+
+  p {
+    text-transform: uppercase;
+    padding: 5px;
+  }
+  
+  #first {
+    background-color: goldenrod;
+  }
+  
+  #second {
+    background-color: silver;
+  }
+  
+  #third {
+    background-color: #CD7F32;
+  }

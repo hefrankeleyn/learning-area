@@ -22,7 +22,7 @@ public class Exercise1137BadShuffling {
     }
 }
 
-class ShuffleTest{
+class ShuffleTest02{
     private static final Logger logger = Logger.getLogger("basicprogrammingmodel.exercises");
     public static void shuffle(int[] a){
         int N = a.length;

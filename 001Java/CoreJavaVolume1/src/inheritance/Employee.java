@@ -10,6 +10,12 @@ public class Employee{
     private String name;
     private double salary;
     private LocalDate hireDay;
+
+    public Employee(String name){
+        this.name =name;
+        this.salary = 3000;
+        this.hireDay = LocalDate.of(2019, 1, 3);
+    }
     /**
     *  Constructor
      * @param name
@@ -43,6 +49,11 @@ public class Employee{
     public void raiseSalary(double byPercent){
         double raise = salary * byPercent / 100;
         salary += raise;
+    }
+
+    @Override
+    public String toString() {
+        return getClass()+"[name=" + name + ", salary=" + salary + ",hireDay=" + hireDay + "]";
     }
 
 

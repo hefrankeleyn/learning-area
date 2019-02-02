@@ -1,0 +1,27 @@
+ul {
+    padding: 0;
+  }
+  
+  li {
+    padding: 3px;
+    margin-bottom: 5px;
+    list-style-type: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: red;
+  }
+  
+  li:nth-of-type(even) {
+    background-color: #ccc;
+  }
+  
+  li:nth-of-type(odd) {
+    background-color: #eee;
+  }

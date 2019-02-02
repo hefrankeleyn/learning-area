@@ -1,0 +1,46 @@
+/* All elements with the attribute "data-vegetable"
+   are given green text */
+   [data-vegetable] {
+    color: green;
+  }
+  
+  /* All elements with the attribute "data-vegetable"
+     with the exact value "liquid" are given a golden
+     background color */
+  [data-vegetable="liquid"] {
+    background-color: goldenrod;
+  }
+  
+  /* All elements with the attribute "data-vegetable",
+     containing the value "spicy", even among others,
+     are given a red text color */
+  [data-vegetable~="spicy"] {
+    color: red;
+  }
+
+  [lang|=en] {
+      background-color: yellow;
+  }
+
+  /* Classic usage for language selection */
+[lang|="fr"] {
+    font-weight: bold;
+  }
+  
+  /* All elements with the attribute "data-quantity", for which
+     the value starts with "optional" */
+  [data-quantity^="optional"] {
+    opacity: 0.5;
+  }
+  
+  /* All elements with the attribute "data-quantity", for which
+     the value ends with "kg" */
+  [data-quantity$="kg"] {
+    font-weight: bold;
+  }
+  
+  /* All elements with the attribute "data-vegetable" containing
+     the substring "not spicy" are turned back to green */
+  [data-vegetable*="not spicy"] {
+    color: green;
+  }

@@ -2,6 +2,62 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Exercise1139RandomMatchs",
+            "request": "launch",
+            "mainClass": "basicprogrammingmodel.exercises.Exercise1139RandomMatchs",
+            "projectName": "Algorithms"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Exercise1136EmpiricalShuffleCheck",
+            "request": "launch",
+            "mainClass": "basicprogrammingmodel.exercises.Exercise1136EmpiricalShuffleCheck",
+            "projectName": "Algorithms"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Exercise1137EmpiricalShuffleCheck",
+            "request": "launch",
+            "mainClass": "basicprogrammingmodel.exercises.Exercise1137EmpiricalShuffleCheck",
+            "projectName": "Algorithms"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Exercise1135DiceSimulation",
+            "request": "launch",
+            "mainClass": "basicprogrammingmodel.exercises.Exercise1135DiceSimulation",
+            "projectName": "Algorithms"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Exercise1133MatrixLibrary",
+            "request": "launch",
+            "mainClass": "basicprogrammingmodel.exercises.Exercise1133MatrixLibrary",
+            "projectName": "Algorithms"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Exercise1132Histogram",
+            "request": "launch",
+            "mainClass": "basicprogrammingmodel.exercises.Exercise1132Histogram",
+            "projectName": "Algorithms"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Exercise1131RandomConnections",
+            "request": "launch",
+            "mainClass": "basicprogrammingmodel.exercises.Exercise1131RandomConnections",
+            "projectName": "Algorithms"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StdDrawTest",
+            "request": "launch",
+            "mainClass": "basicprogrammingmodel.model1.StdDrawTest",
+            "projectName": "Algorithms"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Exercise1130ArrayExercise",
             "request": "launch",
             "mainClass": "basicprogrammingmodel.exercises.Exercise1130ArrayExercise",

@@ -2,59 +2,275 @@
     "configurations": [
         {
             "type": "java",
-            "name": "CodeLens (Launch) - ObjectAnalyzerTest",
+            "name": "CodeLens (Launch) - TextComponentFrameTest",
             "request": "launch",
-            "mainClass": "inheritance.reflection.object_analyzer.ObjectAnalyzerTest",
+            "mainClass": "swing.text.TextComponentFrameTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CalculatorPanelTest",
+            "request": "launch",
+            "mainClass": "swing.mvc.layout.calculator.CalculatorPanelTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BorderLayoutTest",
+            "request": "launch",
+            "mainClass": "swing.mvc.layout.BorderLayoutTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MouseFrameTest",
+            "request": "launch",
+            "mainClass": "swing.mouse.MouseFrameTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ActionFrameTest",
+            "request": "launch",
+            "mainClass": "swing.action.ActionFrameTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PlafFrameTest",
+            "request": "launch",
+            "mainClass": "swing.plaf.PlafFrameTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ButtonFrameTest",
+            "request": "launch",
+            "mainClass": "swing.button.ButtonFrameTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ImageTest",
+            "request": "launch",
+            "mainClass": "swing.image.ImageTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FontTest",
+            "request": "launch",
+            "mainClass": "swing.font.FontTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DrawTest",
+            "request": "launch",
+            "mainClass": "swing.draw.DrawTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - NotHelloWorld",
+            "request": "launch",
+            "mainClass": "swing.simpleframe.NotHelloWorld",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SizedFrameTest",
+            "request": "launch",
+            "mainClass": "swing.simpleframe.SizedFrameTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SimpleFrameTest",
+            "request": "launch",
+            "mainClass": "swing.simpleframe.SimpleFrameTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Sieve",
+            "request": "launch",
+            "mainClass": "collections.sieve.Sieve",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ArrayAndList",
+            "request": "launch",
+            "mainClass": "collections.ArrayAndList",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ShuffleTest",
+            "request": "launch",
+            "mainClass": "collections.shuffle.ShuffleTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MapTest",
+            "request": "launch",
+            "mainClass": "map.MapTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PriorityQueueTest",
+            "request": "launch",
+            "mainClass": "collections.priorityqueue.PriorityQueueTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TreeSetTest",
+            "request": "launch",
+            "mainClass": "collections.set.TreeSetTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SetTest",
+            "request": "launch",
+            "mainClass": "collections.set.SetTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LinkedListTest",
+            "request": "launch",
+            "mainClass": "collections.linkedlist.LinkedListTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - IteratorTest",
+            "request": "launch",
+            "mainClass": "genericclass.collections.IteratorTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - GenericReflection",
+            "request": "launch",
+            "mainClass": "genericclass.genericreflection.GenericReflection",
             "projectName": "CoreJavaVolume1"
         },
         {
             "type": "java",
             "name": "CodeLens (Launch) - ClassTest",
             "request": "launch",
-            "mainClass": "ClassTest",
+            "mainClass": "genericclass.ClassTest",
             "projectName": "CoreJavaVolume1"
         },
         {
             "type": "java",
-            "name": "CodeLens (Launch) - ReflectionTest",
+            "name": "CodeLens (Launch) - PairTest3",
             "request": "launch",
-            "mainClass": "inheritance.reflection.ReflectionTest",
-            "args": "java.lang.Double",
+            "mainClass": "genericclass.pair3.PairTest3",
             "projectName": "CoreJavaVolume1"
         },
         {
             "type": "java",
-            "name": "CodeLens (Launch) - EnumTest",
+            "name": "CodeLens (Launch) - CallOldCore",
             "request": "launch",
-            "mainClass": "inheritance.enums.EnumTest",
+            "mainClass": "genericclass.CallOldCore",
             "projectName": "CoreJavaVolume1"
         },
         {
             "type": "java",
-            "name": "CodeLens (Launch) - EqualsTest",
+            "name": "CodeLens (Launch) - PairTest2",
             "request": "launch",
-            "mainClass": "inheritance.equals.EqualsTest",
+            "mainClass": "genericclass.pair2.PairTest2",
             "projectName": "CoreJavaVolume1"
         },
         {
             "type": "java",
-            "name": "CodeLens (Launch) - EqualsTest",
+            "name": "CodeLens (Launch) - PairTest1",
             "request": "launch",
-            "mainClass": "EqualsTest",
+            "mainClass": "genericclass.pair1.PairTest1",
             "projectName": "CoreJavaVolume1"
         },
         {
             "type": "java",
-            "name": "CodeLens (Launch) - PersonTest",
+            "name": "CodeLens (Launch) - LoggingImageViewer",
             "request": "launch",
-            "mainClass": "inheritance.abstractclasses.PersonTest",
+            "mainClass": "exceptions.logging.LoggingImageViewer",
             "projectName": "CoreJavaVolume1"
         },
         {
             "type": "java",
-            "name": "CodeLens (Launch) - ManagerTest",
+            "name": "CodeLens (Launch) - LogTest",
             "request": "launch",
-            "mainClass": "inheritance.ManagerTest",
+            "mainClass": "exceptions.logging.LogTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - AutoCloseableTest",
+            "request": "launch",
+            "mainClass": "exceptions.stacktrace.AutoCloseableTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StackTraceTest",
+            "request": "launch",
+            "mainClass": "exceptions.stacktrace.StackTraceTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ProxyTest",
+            "request": "launch",
+            "mainClass": "interface_lambda_innerclass.proxy.ProxyTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StaticInnerClassTest",
+            "request": "launch",
+            "mainClass": "interface_lambda_innerclass.innerclass.StaticInnerClassTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DoubleBraceInitialization",
+            "request": "launch",
+            "mainClass": "interface_lambda_innerclass.innerclass.DoubleBraceInitialization",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - InnerClassTest03",
+            "request": "launch",
+            "mainClass": "interface_lambda_innerclass.innerclass.InnerClassTest03",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - App",
+            "request": "launch",
+            "mainClass": "app.App",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - InnerClassTest",
+            "request": "launch",
+            "mainClass": "interface_lambda_innerclass.innerclass.InnerClassTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - InnerClassTest02",
+            "request": "launch",
+            "mainClass": "interface_lambda_innerclass.innerclass.InnerClassTest02",
             "projectName": "CoreJavaVolume1"
         }
     ]
