@@ -16,7 +16,7 @@ public class LinkedListTest {
     private static final Logger logger = Logger.getLogger("collections.linkedlist");
 
     public static void main(String[] args) {
-        //runMain();
+        runMain();
         testApi();
     }
 

@@ -34,11 +34,11 @@ class ImageFrame extends JFrame{
 class ImageComponent extends JComponent{
     private static final int DEFAULT_WIDTH = 300;
     private static final int DEFAULT_HEIGHT = 200;
-
+    private static final String IMAGE_PATH = "/Users/lifei/Documents/workspace/learning-area/001Java/CoreJavaVolume1/source/photos/icon.gif";
     private Image image;
 
     public ImageComponent(){
-        image = new ImageIcon("F:\\upgradeGo\\workplace\\learning-area\\001Java\\03CoreJavaVolume\\source\\icon.gif").getImage();
+        image = new ImageIcon(IMAGE_PATH).getImage();
     }
 
     @Override
