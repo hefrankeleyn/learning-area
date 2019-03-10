@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 用来装配bean的最基本的XML元素包含在spring-beans 模式中-->
+    <!-- 借助id属性，为每个bean设置一个你自己选择的名字
+         注意： 会调用默认构造函数创建bean
+     -->
+    <!-- 装配 -->
+    <bean id="compactDisc" class="com.hef.wiring.xmlwiring.SgtPeppers"></bean>
+
+    <!-- 注入 -->
+    <bean id="cdPlayer00" class="com.hef.wiring.xmlwiring.CDPlayer">
+        <constructor-arg ref="compactDisc"/>
+    </bean>
+
+    <!--
+    Spring 3.0 之后提供了一种简写格式，但必须要引入 xmlns:c
+    -->
+    <bean id="cdPlayer" class="com.hef.wiring.xmlwiring.CDPlayer"
+          c:compactDisc-ref="compactDisc"/>
+    <!-- 以字面量的形式注入到构造函数中 -->
+    <bean id="blankDisc" class="com.hef.wiring.xmlwiring.BlankDisc">
+        <constructor-arg value="Blank,People's love." />
+        <constructor-arg value="The Beatles" />
+    </bean>
+
+    <!-- 以字面量的形式注入到构造函数中，c-命名空间形式 -->
+    <bean id="blankDisc02" class="com.hef.wiring.xmlwiring.BlankDisc"
+          c:_0="Blank,c- format" c:_1="The Beatles"/>
+
+    <!-- c- 命名空间 无法注入集合 最简单的方法是设置为空，但这种方式，可能会引起NullPointerException-->
+    <bean id="multiDiscNull01" class="com.hef.wiring.xmlwiring.MultiDisc">
+        <constructor-arg value="Multi,People's love"/>
+        <constructor-arg value="The Multi"/>
+        <constructor-arg><null/></constructor-arg>
+    </bean>
+
+    <!-- 可以使用list 来声明
+         假如构造函数中有一个 List<CompactDisc> cds 的参数，可以使用 <ref bean=""> 代替  <value></value>
+    -->
+    <bean id="multiDiscList02" class="com.hef.wiring.xmlwiring.MultiDisc">
+        <constructor-arg value="Multi,People's love"/>
+        <constructor-arg value="The Multi"/>
+        <constructor-arg>
+            <list>
+                <value>Multi01</value>
+                <value>Multi04</value>
+                <value>Multi03</value>
+                <value>Multi02</value>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>

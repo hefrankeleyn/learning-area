@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/util
+         http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="sgtPeppers" class="com.hef.wiring.xmlproperty.SgtPeppers"/>
+
+    <!-- 使用属性的setter方法 -->
+    <bean id="cdPlayer" class="com.hef.wiring.xmlproperty.CDPlayer">
+        <property name="compactDisc" ref="sgtPeppers"/>
+    </bean>
+
+    <!--使用p-命名空间的-->
+    <bean id="cdPlayer02" class="com.hef.wiring.xmlproperty.CDPlayer"
+          p:compactDisc-ref="sgtPeppers"/>
+
+    <!--注入字面量-->
+    <bean id="blankDisc01" class="com.hef.wiring.xmlproperty.BlankDisc">
+        <property name="artist" value="The Blank property"/>
+        <property name="title" value="Blank, people's love"/>
+        <property name="tracks">
+            <list>
+                <value>Track property01</value>
+                <value>Track property03</value>
+                <value>Track property02</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 使用p-命名空间-->
+    <bean id="blankDisc02" class="com.hef.wiring.xmlproperty.BlankDisc"
+         p:title="Blank, people's love."
+         p:artist="The Blank property">
+        <property name="tracks">
+            <list>
+                <value>Track property01</value>
+                <value>Track property03</value>
+                <value>Track property02</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--使用util:list功能-->
+    <util:list id="trackList">
+        <value>Track property01</value>
+        <value>Track property03</value>
+        <value>Track property02</value>
+    </util:list>
+    <!-- 使用p-命名空间-->
+    <bean id="blankDisc03" class="com.hef.wiring.xmlproperty.BlankDisc"
+          p:title="Blank, people's love."
+          p:artist="The Blank property"
+          p:tracks-ref="trackList"/>
+</beans>
