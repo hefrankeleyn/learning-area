@@ -2,6 +2,241 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ClassTest",
+            "request": "launch",
+            "mainClass": "com.vscodes.ClassTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PrimitiveTypeTest",
+            "request": "launch",
+            "mainClass": "com.vscodes.PrimitiveTypeTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SwingThreadTest",
+            "request": "launch",
+            "mainClass": "concurrency.swing.SwingThreadTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ForkJoinTest",
+            "request": "launch",
+            "mainClass": "concurrency.forkjoin.ForkJoinTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ThreadPoolTest",
+            "request": "launch",
+            "mainClass": "concurrency.threadpool.ThreadPoolTest",
+            "console": "integratedTerminal",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Future",
+            "request": "launch",
+            "mainClass": "concurrency.future.Future",
+            "console": "integratedTerminal",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BlockingQueueTest",
+            "request": "launch",
+            "mainClass": "concurrency.blockingqueque.BlockingQueueTest",
+            "console": "integratedTerminal",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SynchBank",
+            "request": "launch",
+            "mainClass": "concurrency.synch2.SynchBank",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SynchBank",
+            "request": "launch",
+            "mainClass": "concurrency.synch.SynchBank",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - UnsynchBankTest",
+            "request": "launch",
+            "mainClass": "concurrency.unsynch.UnsynchBankTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - InterruptTest",
+            "request": "launch",
+            "mainClass": "concurrency.interrupt.InterruptTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BounceThread",
+            "request": "launch",
+            "mainClass": "concurrency.bouncethread.BounceThread",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Bounce",
+            "request": "launch",
+            "mainClass": "concurrency.bounce.Bounce",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PreferencesTest",
+            "request": "launch",
+            "mainClass": "preferences.PreferencesTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PropertiesTest",
+            "request": "launch",
+            "mainClass": "properties.PropertiesTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RobotTest",
+            "request": "launch",
+            "mainClass": "swing.robot.RobotTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ColorChooserFrame",
+            "request": "launch",
+            "mainClass": "swing.colorchooser.ColorChooserFrame",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ImageViewerFrameTest",
+            "request": "launch",
+            "mainClass": "swing.filechooser.ImageViewerFrameTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DataExchangeFrameText",
+            "request": "launch",
+            "mainClass": "swing.dataexchange.DataExchangeFrameText",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DialogFrameTest",
+            "request": "launch",
+            "mainClass": "swing.dialog.DialogFrameTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - OptionDialogFrameTest",
+            "request": "launch",
+            "mainClass": "swing.opendialog.OptionDialogFrameTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CircleLayoutFrameTest",
+            "request": "launch",
+            "mainClass": "swing.circlelayout.CircleLayoutFrameTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FontFrameText",
+            "request": "launch",
+            "mainClass": "swing.gridbag.grouplayout.FontFrameText",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FontFrameText",
+            "request": "launch",
+            "mainClass": "swing.gridbag.FontFrameText",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ToolBarFrameTest",
+            "request": "launch",
+            "mainClass": "swing.toolbar.ToolBarFrameTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MenuFrameTest",
+            "request": "launch",
+            "mainClass": "swing.menu.MenuFrameTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SliderFrameTest",
+            "request": "launch",
+            "mainClass": "swing.text.SliderFrameTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ComboBoxFrameTest",
+            "request": "launch",
+            "mainClass": "swing.text.ComboBoxFrameTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BorderFrameTest",
+            "request": "launch",
+            "mainClass": "swing.text.BorderFrameTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RadioButtonFrameTest",
+            "request": "launch",
+            "mainClass": "swing.text.RadioButtonFrameTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CheckBoxFrameTest",
+            "request": "launch",
+            "mainClass": "swing.text.CheckBoxFrameTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DebugTest",
+            "request": "launch",
+            "mainClass": "com.vscodes.DebugTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TerminalInputTest",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "mainClass": "TerminalInputTest",
+            "projectName": "CoreJavaVolume1"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - TextComponentFrameTest",
             "request": "launch",
             "mainClass": "swing.text.TextComponentFrameTest",
