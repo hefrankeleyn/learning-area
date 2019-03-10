@@ -1,0 +1,23 @@
+#dream {
+    border: 5px yellow solid !important;
+}
+.dream {
+    background-color: blue;
+    border: none !important;
+}
+.city {
+    background-color: gray;
+    color: white;
+    border: 1px red solid;
+}
+/* 
+  当改成p的时候，无法覆盖
+p {
+    border: 1px black solid !important;
+}
+*/
+
+/* 改成同级别的选择器的时候，后面的“!important” 可以覆盖前面的 “!important” */
+.good {
+    border: 1px black solid !important;
+}
