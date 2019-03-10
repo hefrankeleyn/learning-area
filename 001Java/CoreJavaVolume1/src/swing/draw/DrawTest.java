@@ -12,6 +12,8 @@ import java.awt.geom.Rectangle2D;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
+import swing.eventtracer.EventTracer;
+
 /**
  * @version 1.0 2019-01-28
  * @author Li Fei
@@ -24,6 +26,9 @@ public class DrawTest {
             frame.setTitle("DrawTest");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setVisible(true);
+
+            EventTracer tracer = new EventTracer();
+            tracer.add(frame);
         });
     }
 }
