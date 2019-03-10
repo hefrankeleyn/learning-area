@@ -1,0 +1,7 @@
+Manifest-Version: 1.1
+
+Name: ResourceTest.class
+
+Name: resource/
+
+Main-Class: resource.ResourceTest 
