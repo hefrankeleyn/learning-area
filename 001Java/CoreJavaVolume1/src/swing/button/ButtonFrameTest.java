@@ -14,11 +14,20 @@ public class ButtonFrameTest {
         EventQueue.invokeLater(()->{
             //JFrame frame = new ButtonFrame();
             //JFrame frame = new ButtonFrameLambda();
-            JFrame frame = new ButtonFrameSource();
+            JFrame jframe = new ButtonFrameSource();
             
-            frame.setTitle("ButtonFrame");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setVisible(true);
+            jframe.setTitle("ButtonFrame");
+            jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            jframe.setVisible(true);
         });
+    }
+
+    private static void priStr(){
+        pro();
+    }
+
+    private static void pro() {
+        String x = "Hello world.";
+        System.out.println(x);
     }
 }
