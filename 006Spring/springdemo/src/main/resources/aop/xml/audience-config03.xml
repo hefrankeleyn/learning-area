@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 装配bean -->
+    <bean id="trackCounter" class="com.hef.aop.xml.TrackCounter"/>
+    <bean id="blankDisc" class="com.hef.aop.aspect04.BlankDisc">
+        <property name="title" value="Blankdisc coming"/>
+        <property name="artist" value="This about blankdisc."/>
+        <property name="tracks">
+            <list>
+                <value>track01</value>
+                <value>track02</value>
+                <value>track03</value>
+                <value>track04</value>
+                <value>track05</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--启用AspectJ自动代理-->
+    <aop:aspectj-autoproxy/>
+    <aop:config>
+        <aop:aspect ref="trackCounter">
+            <!-- 定义切点 -->
+            <aop:pointcut id="trackPlayed" expression="execution(* com.hef.aop.aspect04.CompactDisc.play(int))
+                                                           and args(trackNumber)"/>
+            <aop:before method="countTrack" pointcut-ref="trackPlayed"/>
+        </aop:aspect>
+    </aop:config>
+
+</beans>

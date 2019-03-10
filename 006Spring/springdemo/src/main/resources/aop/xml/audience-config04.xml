@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 装配bean -->
+    <bean id="performance" class="com.hef.aop.SingPerformance"/>
+    <bean id="defaultEncoreable" class="com.hef.aop.aspect05.DefaultEncoreable"/>
+
+    <!--启用AspectJ自动代理-->
+    <aop:aspectj-autoproxy/>
+    <aop:config>
+        <aop:aspect>
+            <aop:declare-parents types-matching="com.hef.aop.Performance+"
+                                 implement-interface="com.hef.aop.aspect05.Encoreable"
+                                 delegate-ref="defaultEncoreable"/>
+            <!--
+                也可以将 delegate-ref="defaultEncoreable" 换成 default-impl="com.hef.aop.aspect05.DefaultEncoreable"
+            -->
+        </aop:aspect>
+    </aop:config>
+
+</beans>

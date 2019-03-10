@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="performance" class="com.hef.aop.SingPerformance"/>
+    <bean id="critic" class="com.hef.aop.aspectj.CriticismEngineImpl">
+        <property name="criticismPool">
+            <list>
+                <value>criticism01</value>
+                <value>criticism02</value>
+                <value>criticism03</value>
+                <value>criticism04</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean class="com.hef.aop.aspectj.CriticAspect"
+          factory-method="aspectOf">
+        <property name="criticismEngine" ref="critic"/>
+    </bean>
+</beans>

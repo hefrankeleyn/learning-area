@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 装配bean -->
+    <bean id="singPerformance" class="com.hef.aop.SingPerformance"/>
+    <bean id="failPerformance" class="com.hef.aop.FailPerformance"/>
+    <bean id="audience" class="com.hef.aop.xml.Audience"/>
+
+    <!--启用AspectJ自动代理-->
+    <aop:aspectj-autoproxy/>
+    <aop:config>
+        <aop:aspect ref="audience">
+            <!-- 定义切点 -->
+            <aop:pointcut id="performance" expression="execution(* com.hef.aop.Performance.perform(..))"/>
+            <aop:before method="silenceCellPhones" pointcut-ref="performance"/>
+            <aop:before method="takeSeats" pointcut-ref="performance"/>
+            <aop:after-returning method="applause" pointcut-ref="performance"/>
+            <aop:after-throwing method="demandRefund" pointcut-ref="performance"/>
+        </aop:aspect>
+    </aop:config>
+
+</beans>
