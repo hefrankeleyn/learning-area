@@ -27,14 +27,8 @@ public class HomeController {
 public class HomeController {
 
     @RequestMapping(method = RequestMethod.GET)
-    public String home() {
-        return "home";
-    }
-
-
-    @RequestMapping(value = "/home2", method = RequestMethod.GET)
     public String home02() {
-        return "/jsplibview/home";
+        return "home";
     }
 }
 
