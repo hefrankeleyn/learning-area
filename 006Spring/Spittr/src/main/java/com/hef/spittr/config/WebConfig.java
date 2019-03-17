@@ -72,26 +72,5 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         return messageSource;
     }
 
-    /*
-    配置 Tiles 视图解析器, 负责定位和加载tile定义，并协调生成tiles
-     */
-    /*@Bean
-    public TilesConfigurer tilesConfigurer() {
-        TilesConfigurer tiles = new TilesConfigurer();
-        tiles.setDefinitions(new String[] {"/WEB-INF/layout/tiles.xml"});
-        tiles.setCheckRefresh(true); // 启用刷新功能
-        return tiles;
-    }*/
-    /**
-     * 将逻辑视图名称解析为Tile定义
-     */
-//    @Bean
-//    public ViewResolver viewResolver() {
-//        TilesViewResolver tilesViewResolver = new TilesViewResolver();
-//        tilesViewResolver.setPrefix("/WEB-INF/views/");
-//        tilesViewResolver.setSuffix(".jsp");
-//        tilesViewResolver.setExposeContextBeansAsAttributes(true);
-//        return tilesViewResolver;
-//    }
 
 }
