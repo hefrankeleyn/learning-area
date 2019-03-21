@@ -56,7 +56,7 @@ public class SpittleControllerTest {
                         Matchers.hasItems(expectedSpittles.toArray())));   // 断言期望的值
     }
 
-    @Test
+    //@Test
     public void testSpittle() throws Exception {
         Spittle expectSpittle = new Spittle("Hello", new Date());
         SpittleRepository mockRepository = Mockito.mock(SpittleRepository.class);

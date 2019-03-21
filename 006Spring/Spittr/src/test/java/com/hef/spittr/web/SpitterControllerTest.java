@@ -22,7 +22,7 @@ public class SpitterControllerTest {
                 .andExpect(MockMvcResultMatchers.view().name("registerForm"));
     }
 
-    @Test
+    //@Test
     public void shouldProcessRegistration() throws Exception {
         SpitterRepository mockRepository = Mockito.mock(SpitterRepository.class);
         Spitter unsaved = new Spitter("XiaoMing","23hef","Wang","XiaoMing");

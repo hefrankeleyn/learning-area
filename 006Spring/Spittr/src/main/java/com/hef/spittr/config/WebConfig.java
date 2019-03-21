@@ -6,6 +6,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -13,6 +17,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
+
+import java.io.IOException;
 
 /**
  * 启用springmvc
@@ -70,6 +76,30 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         messageSource.setBasename("file:///Users/lifei/Documents/opt/properties");
         messageSource.setCacheSeconds(10);
         return messageSource;
+    }
+
+    /**
+     * 配置multipart解析器， 部署到Servlet3.0的容器中
+     * 必须在web.xml 或servlet 初始化类中，将multipart的具体细节作为DispatcherServlet配置的一部分
+     * @return  StanderdServletMultipartResolver
+     */
+    @Bean
+    public MultipartResolver multipartResolver(){
+        return new StandardServletMultipartResolver();
+    }
+
+
+    /**
+     * 配置multipart解析器， 部署到非Servlet3.0 的容器中
+     * @return
+     * @throws IOException
+     */
+    public MultipartResolver multipartResolver02() throws IOException {
+        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+        multipartResolver.setUploadTempDir(new FileSystemResource("/Users/lifei/Documents/servers/spittr/uploads"));
+        multipartResolver.setMaxUploadSize(2097152);
+        multipartResolver.setMaxInMemorySize(0);
+        return multipartResolver;
     }
 
 

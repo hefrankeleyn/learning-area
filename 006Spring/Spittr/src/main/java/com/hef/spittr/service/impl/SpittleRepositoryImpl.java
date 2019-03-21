@@ -20,6 +20,11 @@ public class SpittleRepositoryImpl implements SpittleRepository {
         return new Spittle(spittleId, "Spittle" + spittleId, new Date(), 0.0, 0.0);
     }
 
+    @Override
+    public void save(Spittle spittle) {
+        System.out.println(spittle);
+    }
+
     private List<Spittle> createSpittles(int count){
         List<Spittle> spittles = new ArrayList<>(count);
         for (int i = 0; i < count; i++) {

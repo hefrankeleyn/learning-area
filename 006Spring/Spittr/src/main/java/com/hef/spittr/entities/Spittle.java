@@ -9,13 +9,16 @@ import java.util.Date;
  * 用户发布的简短状态更新
  */
 public class Spittle {
-    private final Long id;
-    private final String message;
-    private final Date time;
+    private Long id;
+    private String message;
+    private Date time;
     // 维度
     private Double latitude;
     // 经度
     private Double longitude;
+
+    public Spittle() {
+    }
 
     public Spittle(Long id, String message, Date time, Double latitude, Double longitude) {
         this.id = id;

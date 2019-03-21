@@ -2,6 +2,9 @@ package com.hef.spittr.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletRegistration;
+
 /**
  * @description 添加 dispatcherServlet  ,前端控制器
  * 请求离开浏览器，到达SpringMVC框架的第一站
@@ -46,4 +49,15 @@ public class SpittrWebAppInitializer extends AbstractAnnotationConfigDispatcherS
     }
 
 
+    /**
+     * 配置multipart的具体细节
+     * 上传文件会临时写入到： /Users/lifei/Documents/servers/spittr/uploads
+     * @param registration
+     */
+    @Override
+    protected void customizeRegistration(ServletRegistration.Dynamic registration) {
+        registration.setMultipartConfig(
+                new MultipartConfigElement("/Users/lifei/Documents/servers/spittr/uploads",
+                2097152, 4194304, 0));
+    }
 }

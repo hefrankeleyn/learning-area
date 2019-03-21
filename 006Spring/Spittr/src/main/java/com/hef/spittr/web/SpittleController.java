@@ -5,10 +5,7 @@ import com.hef.spittr.service.SpittleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -68,9 +65,12 @@ public class SpittleController {
     @RequestMapping(value = "/{spittleId}", method = RequestMethod.GET)
     public String spittle(@PathVariable("spittleId") long spittleId,
                           Model model) {
-        model.addAttribute(spittleRepository.findOne(spittleId));
+        Spittle spittle = spittleRepository.findOne(spittleId);
+        if (spittle == null){
+            throw new SpittleNotFoundException();
+        }
+        model.addAttribute(spittle);
         return "spittle";
-
     }
 
     @RequestMapping(value = "/spittle2/{spittleId}", method = RequestMethod.GET)
@@ -78,6 +78,28 @@ public class SpittleController {
                           Model model) {
         model.addAttribute(spittleRepository.findOne(spittleId));
         return "/jsplibview/spittle";
-
     }
+
+
+    @RequestMapping(value = "/spittleForm" , method = RequestMethod.GET)
+    public String spittleForm(){
+        return "spittleForm";
+    }
+
+    @RequestMapping(value = "/saveSpittle", method = RequestMethod.POST)
+    public String saveSpittle(Spittle spittle, Model model) {
+        System.out.println(spittle);
+        if (spittle.getId() == null){
+            throw new DuplicateSpittleException();
+        }else {
+            spittleRepository.save(spittle);
+            return "redirect:/spittles";
+        }
+    }
+
+    // 控制器通知取代该方法
+//    @ExceptionHandler(value = DuplicateSpittleException.class)
+//    public String handleDuplicateSpittle(){
+//        return "/error/duplicate";
+//    }
 }
