@@ -1,4 +1,4 @@
-package com.hef.algorithms.fundamentals.dataabstraction;
+package com.hef.algorithms.fundamentals.dataabstraction.exercise1201;
 
 import com.hef.commons.StdDraw;
 
