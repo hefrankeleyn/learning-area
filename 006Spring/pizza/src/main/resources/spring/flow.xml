@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:flow="http://www.springframework.org/schema/webflow-config"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/webflow-config
+       http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.3.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+
+    <context:component-scan base-package="com.hef.pizza.flow"/>
+    <!-- 装配流程执行器 -->
+    <flow:flow-executor id="flowExecutor"/>
+
+    <!-- 配置流程注册表:
+        加载流程定义并让流程执行器能够使用它们
+     -->
+    <flow:flow-registry id="flowRegistry" base-path="/WEB-INF/flow">
+        <flow:flow-location-pattern value="/**/*-flow.xml"/>
+    </flow:flow-registry>
+
+    <!--
+        FlowHandlerMapping 帮助DispatcherServlet 将流程请求发送给Spring Web Flow
+    -->
+    <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+        <property name="flowRegistry" ref="flowRegistry"/>
+    </bean>
+
+    <!--
+        配置响应请求的FlowHandlerAdapter
+        FlowHandlerAdapter 等同于SpringMVC 的控制器
+        这个处理适配器是DispatcherServlet和Spring Web Flow之间的桥梁
+    -->
+    <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
+        <property name="flowExecutor" ref="flowExecutor"/>
+    </bean>
+</beans>
