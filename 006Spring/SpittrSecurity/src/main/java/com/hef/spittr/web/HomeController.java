@@ -32,9 +32,9 @@ public class HomeController {
     }
 
 
-    @RequestMapping(value = "/home2", method = RequestMethod.GET)
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String home02() {
-        return "/jsplibview/home";
+        return "login";
     }
 }
 

@@ -39,11 +39,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                        .antMatchers("/spitters/me").authenticated()
-                        .antMatchers(HttpMethod.POST, "/spittles").authenticated()
-                        .regexMatchers("/spitters/.*").authenticated()
-                        .anyRequest().permitAll();
+        http.formLogin()
+                .loginPage("/login")
+             .and()
+                .httpBasic().realmName("SpittrSecurity")
+            .and()// 启用remember me
+            .rememberMe()
+                .tokenValiditySeconds(241920)
+                .key("spittrKey")
+            .and()
+            .authorizeRequests()
+                .antMatchers("/spittles").access("isAuthenticated() and principal.username=='admin'")
+                .antMatchers("/spitters/me").authenticated()
+                .antMatchers(HttpMethod.POST, "/spittles").authenticated()
+                .regexMatchers("/spitters/.*").authenticated()
+                .anyRequest().permitAll();
         // 配置权限
 //        http.authorizeRequests()
 //                .antMatchers("/spitters/me").hasAuthority("ROLE_SPITTER")

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<body>
+
+    <h1><span th:utext="#{spittr.welcome}"></span></h1>
+    <!--条件渲染-->
+    <div sec:authorize="isAuthenticated()">
+        <!-- 访问认证细节 -->
+        Hello <span sec:authentication="name">some</span>
+    </div>
+    <div sec:authorize-url="/spittles">
+        <a th:href="@{/spittles}">spittles</a>
+    </div>
+    <a th:href="@{/spitter/register}">Register</a>
+</body>
+</body>
+</html>

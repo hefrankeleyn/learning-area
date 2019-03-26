@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<body>
+    <div th:fragment="header">
+        <a th:href="@{/}">
+            <img id="logo" th:src="@{/resources/images/spitter_logo_50.png}" border="0">
+        </a>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Logout"/>
+        </form>
+        <!--<span id="logout"><a th:href="@{/logout}">Logout</a></span>-->
+    </div>
+
+    <div>Content go here</div>
+    <div th:fragment="copy">Copyright &copy; Li Fei</div>
+</body>
+</html>
