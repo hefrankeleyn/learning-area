@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/jdbc
+       http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+       http://www.springframework.org/schema/jee
+       http://www.springframework.org/schema/jee/spring-jee-4.3.xsd">
+
+    <!-- 第一种方式-->
+    <!--
+        当设置 resource-ref 为 true 的时候，jndi-name 将会自动添加 java:/comp/env 前缀
+    -->
+    <beans profile="production">
+    <jee:jndi-lookup id="dataSource" jndi-name="jdbc/spittr"
+                     expected-type="javax.sql.DataSource"
+                     resource-ref="true"/>
+    </beans>
+    <!--  方法二： 使用数据源连接池-->
+    <!---->
+    <beans profile="development">
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
+          p:driverClassName="org.h2.Driver"
+          p:url="jdbc:h2:tcp://localhost/~/Documents/opt/servers/h2databases/spittr"
+          p:username="spittr"
+          p:password="spittr"
+          p:initialSize="5"
+          p:maxWaitMillis="10000"/>
+    </beans>
+
+    <!-- 方法三； 基于JDBC驱动的数据源-->
+    <beans profile="dev">
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+          p:driverClassName="org.h2.Driver"
+          p:url="jdbc:h2:tcp://localhost/~/Documents/opt/servers/h2databases/spittr"
+          p:username="spittr"
+          p:password="spittr"
+          />
+    </beans>
+
+    <!-- 方法四：使用嵌入式的数据源 -->
+    <beans profile="qa">
+    <jdbc:embedded-database id="dataSource" type="H2">
+
+        <jdbc:script location="classpath:spittr/db/jdbc/schema.sql"/>
+        <jdbc:script location="classpath:spittr/db/jdbc/test-data.sql"/>
+    </jdbc:embedded-database>
+    </beans>
+
+</beans>
