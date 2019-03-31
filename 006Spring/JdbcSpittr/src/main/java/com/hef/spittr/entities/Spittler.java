@@ -9,6 +9,17 @@ public class Spittler {
     private String email;
     private Boolean updateByEmail;
 
+    public Spittler() {
+    }
+
+    public Spittler(String fullname, String username, String password, String email, Boolean updateByEmail) {
+        this.fullname = fullname;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.updateByEmail = updateByEmail;
+    }
+
     public String getFullname() {
         return fullname;
     }

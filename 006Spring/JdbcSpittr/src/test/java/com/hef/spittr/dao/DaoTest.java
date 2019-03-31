@@ -2,7 +2,9 @@ package com.hef.spittr.dao;
 
 
 import com.hef.spittr.entities.Spittler;
+import com.hef.spittr.service.NamedParametersSpittlerService;
 import com.hef.spittr.service.SpittlerService;
+import com.hef.spittr.service.TemplateSpitterService;
 import config.RootConfig;
 import org.junit.Assert;
 import org.junit.Test;
@@ -22,6 +24,13 @@ public class DaoTest {
 
     @Autowired
     private SpittlerService spittlerService;
+
+    @Autowired
+    private TemplateSpitterService templateSpitterService;
+
+    @Autowired
+    private NamedParametersSpittlerService namedParametersSpittlerService;
+
 
     @Test
     public void testJndiDao(){
@@ -63,5 +72,60 @@ public class DaoTest {
         System.out.println(spittler);
         Assert.assertNotNull(spittler);
     }
+
+    @Test
+    public void testTemplateSpittler(){
+        Assert.assertNotNull(templateSpitterService);
+        Spittler spittler = templateSpitterService.findOneSpitter("mingming");
+        System.out.println(spittler);
+        Assert.assertNotNull(spittler);
+    }
+
+    @Test
+    public void testTemplateAddSpittler(){
+        Spittler spittler = new Spittler();
+        spittler.setUsername("xiaoming");
+        spittler.setPassword("password");
+        spittler.setFullname("mingming");
+        spittler.setEmail("mingming@gmail.com");
+        spittler.setUpdateByEmail(false);
+        templateSpitterService.addSpitter(spittler);
+    }
+
+    /**
+     * 测试labda
+     */
+    @Test
+    public void testLabdaTemplateSpittler(){
+        Assert.assertNotNull(templateSpitterService);
+        Spittler spittler = templateSpitterService.lambdaFindOneSpitter("mingming");
+        System.out.println(spittler);
+        Assert.assertNotNull(spittler);
+    }
+
+    /**
+     * 测试 methodReference
+     */
+    @Test
+    public void testmethodReferenceTemplateSpittler(){
+        Assert.assertNotNull(templateSpitterService);
+        Spittler spittler = templateSpitterService.methodReferenceFindOneSpitter("mingming");
+        System.out.println(spittler);
+        Assert.assertNotNull(spittler);
+    }
+
+
+    @Test
+    public void testNamedParamTemplateAddSpittler(){
+        Spittler spittler = new Spittler();
+        spittler.setUsername("daS");
+        spittler.setPassword("password");
+        spittler.setFullname("das");
+        spittler.setEmail("das@gmail.com");
+        spittler.setUpdateByEmail(false);
+        namedParametersSpittlerService.addSpittler(spittler);
+    }
+
+
 
 }
