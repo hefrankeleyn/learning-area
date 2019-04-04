@@ -3,10 +3,12 @@ package config;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
+import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -47,7 +49,7 @@ public class RootConfig {
         sfb.setDataSource(dataSource);
         sfb.setPackagesToScan(new String[]{"com.hef.spittr.domain"});
         Properties properties = new Properties();
-        properties.setProperty("dialect","org.hibernate.dialect.H2Dialect");
+        properties.setProperty("hibernate.dialect","org.hibernate.dialect.H2Dialect");
         sfb.setHibernateProperties(properties);
         return sfb;
     }
@@ -62,5 +64,10 @@ public class RootConfig {
                 new HibernateTransactionManager();
         transactionManager.setSessionFactory(sessionFactory);
         return transactionManager;
+    }
+
+    @Bean
+    public BeanPostProcessor persistenceTranslation(){
+        return new PersistenceExceptionTranslationPostProcessor();
     }
 }
