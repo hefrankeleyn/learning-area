@@ -28,7 +28,7 @@ public class SpitterDaoTest {
     public void testSaveSpittr(){
         Spitter spitter =
                 new Spitter();
-        spitter.setFullName("xiaoMing");
+        spitter.setFullName("daMing");
         spitter.setUsername("xiao");
         spitter.setPassword("world");
         spitter.setEmail("aaa@gmail.com");
