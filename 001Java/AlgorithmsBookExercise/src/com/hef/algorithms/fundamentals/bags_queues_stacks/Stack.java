@@ -63,5 +63,6 @@ public class Stack<Item> implements Iterable<Item>{
         stack.push("c");
         System.out.println("size: " + stack.size());
         System.out.println(stack.pop());
+        Stack<String>[] stacks = (Stack<String>[]) new Stack[5];
     }
 }
