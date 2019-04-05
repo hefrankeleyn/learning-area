@@ -17,9 +17,10 @@ import java.util.List;
 
 /**
  * 配置 ServletLoaderConfig
+ *
+ * 配置应用程序管理类型的JPA
  */
 @Configuration
-//@EnableTransactionManagement
 @ComponentScan(basePackages = "com.hef.spittr",
         excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION,
                 value = EnableWebMvc.class)})
