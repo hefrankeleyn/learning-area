@@ -45,4 +45,24 @@ public class SpitterDaoTest {
         spitterDao.save(spitter);
     }
 
+    @Test
+    public void testFindSpitterByUsername(){
+        Spitter spitter = spitterDao.findByUsername("username");
+        System.out.println(spitter);
+        Assert.assertNotNull(spitter);
+    }
+
+    @Test
+    public void testFindAllGmailSpitters(){
+        List<Spitter> spitters = spitterDao.findAllGmailSpitters();
+        for (Spitter s: spitters) {
+            System.out.println(s);
+        }
+    }
+
+    @Test
+    public void testUpdateFullNameByCondition(){
+        int i = spitterDao.updateFullNameByCondition();
+        System.out.println(i);
+    }
 }

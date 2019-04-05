@@ -1,7 +1,6 @@
 package config;
 
 import org.apache.commons.dbcp2.BasicDataSource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.*;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
@@ -16,16 +15,12 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.transaction.annotation.TransactionManagementConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 /**
- * 配置ContextLoaderListenerDataAPI的所有魔力， 扫描基础包，来查找拓展自Spring Data JPA Repository接口的所有接口，
+ *  注解 EnableJpaRepositories， 配置ContextLoaderListenerDataAPI的所有魔力， 扫描基础包，来查找拓展自Spring Data JPA Repository接口的所有接口，
  * 如果发现拓展自Repository的接口， 它会自动生成这个接口的实现。
  */
 @Configuration
