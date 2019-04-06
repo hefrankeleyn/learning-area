@@ -1,6 +1,7 @@
 package com.hef.algorithms.fundamentals.bags_queues_stacks;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class Stack<Item> implements Iterable<Item>{
 
@@ -33,6 +34,14 @@ public class Stack<Item> implements Iterable<Item>{
         return item;
     }
 
+    public Item peek(){
+        if (first == null){
+            throw new NoSuchElementException("Stack underflow");
+        }else {
+            return first.item;
+        }
+    }
+
     @Override
     public Iterator<Item> iterator() {
         return new ListIterator();
@@ -55,6 +64,8 @@ public class Stack<Item> implements Iterable<Item>{
             return item;
         }
     }
+
+
 
     public static void main(String[] args) {
         Stack<String> stack = new Stack<>();
