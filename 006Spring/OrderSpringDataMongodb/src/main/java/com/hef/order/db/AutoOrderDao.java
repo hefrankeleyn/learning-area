@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 使用Spring Data Repository 来创建 Repository
  */
-public interface AutoOrderDao extends MongoRepository<Order, String> {
+public interface AutoOrderDao extends MongoRepository<Order, String>, OrderOperations {
 
     // 添加自定义的查询方法
     List<Order> findByCustomer(String customer);

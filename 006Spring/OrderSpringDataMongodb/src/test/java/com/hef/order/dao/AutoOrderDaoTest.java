@@ -72,4 +72,12 @@ public class AutoOrderDaoTest {
         }
     }
 
+    @Test
+    public void findOrdersByType(){
+        List<Order> orders = autoOrderDao.findOrdersByType("NET");
+        for(Order order: orders){
+            System.out.println(order);
+        }
+    }
+
 }
