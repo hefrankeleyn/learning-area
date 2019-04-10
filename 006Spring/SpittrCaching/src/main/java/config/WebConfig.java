@@ -11,31 +11,21 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.hef.spittr.controller"})
+@ComponentScan(basePackages = "com.hef.spittr.controller")
 public class WebConfig implements WebMvcConfigurer {
 
-    /**
-     * 配置jsp视图解析器
-     * @return
-     */
     @Bean
     public ViewResolver viewResolver(){
-        InternalResourceViewResolver resolver =
+        InternalResourceViewResolver viewResolver =
                 new InternalResourceViewResolver();
-        resolver.setPrefix("/WEB-INF/views/");
-        resolver.setSuffix(".jsp");
-        resolver.setExposeContextBeansAsAttributes(true);
-        return resolver;
+        viewResolver.setPrefix("/WEB-INF/views/");
+        viewResolver.setSuffix(".jsp");
+        viewResolver.setExposeContextBeansAsAttributes(true);
+        return viewResolver;
     }
 
-    /**
-     * 配置静态资源的处理
-     * @param configurer
-     */
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
-
-
 }
