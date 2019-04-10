@@ -1,4 +1,4 @@
-package config;
+ package config;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -118,18 +118,12 @@ public class ContainerRootConfig {
         adapter.setDatabase(Database.H2);
         adapter.setShowSql(true);
         adapter.setGenerateDdl(false);
-        adapter.setDatabasePlatform("org.hibernate.dialect.H2Dialect");
+        adapter.setDatabasePlatform("");
         return adapter;
 
     }
 
-    /**
-     * @PersistenceContext 该注解是JPA规范提供的， 为了让Spring理解这些注解，并注入EntityManager，
-     * 必须要配置 PersistenceAnnotationBeanPostProcessor
-     * <context:annotation-config></context:annotation-config>  或 <context:component-scan></context:component-scan>
-     * 注解会自动注册 PersistenceAnnotationBeanPostProcessor
-     * @return
-     */
+    
     @Bean
     public PersistenceAnnotationBeanPostProcessor persistenceAnnotationBeanPostProcessor(){
         return new PersistenceAnnotationBeanPostProcessor();
