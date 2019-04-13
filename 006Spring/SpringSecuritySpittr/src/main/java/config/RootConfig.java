@@ -1,10 +1,7 @@
 package config;
 
 import org.apache.commons.dbcp2.BasicDataSource;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
+import org.springframework.context.annotation.*;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -24,6 +21,7 @@ import javax.sql.DataSource;
         classes = {EnableWebMvc.class})})
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "con.hef.spittr.dao", entityManagerFactoryRef = "entityManagerFactory")
+@Import(value = {MethodSecurityconfig.class})
 public class RootConfig {
     /**
      * 配置数据源， 使用连接池
