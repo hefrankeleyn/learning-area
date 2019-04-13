@@ -7,4 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * 使用Spring Data jpa 终结愚蠢的样版式代码
  */
 public interface SpitterDao extends JpaRepository<Spitter, Long> {
+
+    // 自定义 sdl
+    Spitter findSpitterById(Long id);
 }
