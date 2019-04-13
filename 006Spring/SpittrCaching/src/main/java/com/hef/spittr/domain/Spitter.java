@@ -1,25 +1,12 @@
 package com.hef.spittr.domain;
 
-
-import javax.persistence.*;
-
-@Entity
-@Table(name = "spitter")
 public class Spitter {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    //username, password, fullName, email, updateByEmail
-    @Column(name = "fullName")
     private String fullName;
-    @Column(name = "username")
     private String username;
-    @Column(name = "password")
     private String password;
-    @Column(name = "email")
     private String email;
-    @Column(name = "updateByEmail")
     private Boolean updateByEmail;
 
     public Spitter() {
@@ -103,7 +90,8 @@ public class Spitter {
     @Override
     public String toString() {
         return "Spitter{" +
-                "fullName='" + fullName + '\'' +
+                "id=" + id +
+                ", fullName='" + fullName + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
