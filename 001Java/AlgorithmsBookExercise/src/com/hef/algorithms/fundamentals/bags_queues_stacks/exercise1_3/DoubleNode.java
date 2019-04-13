@@ -95,7 +95,7 @@ public class DoubleNode<Item> implements Iterable<Item>{
         if(N == 0) {
             first = oldEnd;
         }
-        N++;
+        N--;
         return item;
     }
 
@@ -112,6 +112,7 @@ public class DoubleNode<Item> implements Iterable<Item>{
                   n.before = c.before;
                   n.next = c;
                   c.before = n;
+                  N++;
               }
               break;
           }else {
@@ -133,6 +134,7 @@ public class DoubleNode<Item> implements Iterable<Item>{
                     n.next = c.next;
                     n.before = c;
                     c.next = n;
+                    N++;
                 }
                 break;
             }else {
@@ -155,6 +157,7 @@ public class DoubleNode<Item> implements Iterable<Item>{
                     c.next.before = c.before;
                     c.before =null;
                     c.next = null;
+                    N--;
                 }
                 break;
             }else {
@@ -173,7 +176,7 @@ public class DoubleNode<Item> implements Iterable<Item>{
         private Node current = first;
         @Override
         public boolean hasNext() {
-            return current == null;
+            return current != null;
         }
 
         @Override
@@ -182,6 +185,24 @@ public class DoubleNode<Item> implements Iterable<Item>{
             current = current.next;
             return item;
         }
+    }
+
+    public static void main(String[] args) {
+        DoubleNode<String> dn = new DoubleNode<>();
+        dn.insertAtBegining("aaa");
+        dn.insertAtEnd("bbb");
+        dn.insertAtBegining("ccc");
+        dn.insertAfterOneNode("bbb", "eee");
+        dn.insertBeforOneNode("bbb", "fff");
+        dn.removeFromEnd();
+        dn.removeFromBeginning();
+
+
+        for (String s:
+             dn) {
+            System.out.println(s);
+        }
+        System.out.println("size: " + dn.size());
     }
 
 
