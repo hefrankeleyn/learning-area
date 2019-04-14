@@ -3,6 +3,10 @@ package com.hef.algorithms.fundamentals.bags_queues_stacks.exercise1_3.exe33;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ *
+ * @param <Item>
+ */
 public class ResizingArrayDeque<Item> implements Iterable<Item>{
 
     // The size of ResizingArrayDeque
