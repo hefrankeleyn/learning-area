@@ -1,6 +1,7 @@
 package com.hef.algorithms.fundamentals.bags_queues_stacks.exercise1_3.exe35;
 
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Random;
 
@@ -8,7 +9,7 @@ import java.util.Random;
  * @Date 2019-04-15
  * @Author lifei
  */
-public class RandomQueue<Item> {
+public class RandomQueue<Item> implements Iterable<Item>{
 
     private Item item;
     private Item[] a;
@@ -87,6 +88,8 @@ public class RandomQueue<Item> {
         a = items;
     }
 
+
+
     public static void main(String[] args) {
         Card card = null;
         RandomQueue<Card> q = new RandomQueue<>();
@@ -112,7 +115,7 @@ public class RandomQueue<Item> {
                 q.enqueue(card);
             }
         }
-        Card[] handOne = new Card[13];
+        /*Card[] handOne = new Card[13];
         Card[] handTwo = new Card[13];
         Card[] handThree = new Card[13];
         Card[] handFour = new Card[13];
@@ -123,10 +126,62 @@ public class RandomQueue<Item> {
         System.out.println(Arrays.toString(handOne));
         System.out.println(Arrays.toString(handTwo));
         System.out.println(Arrays.toString(handThree));
-        System.out.println(Arrays.toString(handFour));
+        System.out.println(Arrays.toString(handFour));*/
+        for (Card c:
+             q) {
+            System.out.println(c);
+        }
 
     }
 
+    @Override
+    public Iterator<Item> iterator() {
+        return new RandomQueueIterator();
+    }
+
+    private class RandomQueueIterator implements Iterator<Item>{
+
+        private int ai;
+        private Item[] items;
+
+        public RandomQueueIterator() {
+            int len = size();
+            ai = 0;
+            items = (Item[]) new Object[len];
+            int[] indexs = new int[len];
+            for (int j = 0; j < len; j++) {
+                indexs[j] = j;
+            }
+            for (int i = 0; i < len; i++) {
+                Random random = new Random();
+                Item temp = a[i];
+                int j = random.nextInt(indexs.length);
+                items[indexs[j]] = temp;
+                int[] oldIndexs = indexs;
+                indexs = new int[oldIndexs.length-1];
+                for (int k = 0, s=0; k < oldIndexs.length; k++) {
+                    if(k == j){
+                        continue;
+                    }
+                    indexs[s] = oldIndexs[k];
+                    s++;
+                }
+
+            }
+        }
+
+        @Override
+        public boolean hasNext() {
+            return ai<size();
+        }
+
+        @Override
+        public Item next() {
+            Item item = items[ai];
+            ai ++;
+            return item;
+        }
+    }
 }
 
 class Card{
