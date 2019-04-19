@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.remoting.rmi.RmiServiceExporter;
 
 /**
+ * 导出服务的第一种方案  Spring 继承RMI
  * @Date 2019-04-15
  * @Author lifei
  */
