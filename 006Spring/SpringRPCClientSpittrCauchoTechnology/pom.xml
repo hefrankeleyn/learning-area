@@ -31,6 +31,7 @@
     <hibernate-core.version>5.3.7.Final</hibernate-core.version>
     <spring-data-jpa.version>2.1.6.RELEASE</spring-data-jpa.version>
     <hessian.version>4.0.38</hessian.version>
+    <spring-remoting.version>2.0.8</spring-remoting.version>
   </properties>
 
   <dependencies>
@@ -185,6 +186,13 @@
       <version>${hessian.version}</version>
     </dependency>
 
+    <!-- caucho burlap 使用-->
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-remoting -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-remoting</artifactId>
+      <version>${spring-remoting.version}</version>
+    </dependency>
   </dependencies>
 
 
