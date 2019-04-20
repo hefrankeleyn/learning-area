@@ -48,7 +48,7 @@ public class WebConfig implements WebMvcConfigurer {
     public HandlerMapping handlerMapping(){
         SimpleUrlHandlerMapping mapping = new SimpleUrlHandlerMapping();
         Properties mappings = new Properties();
-        mappings.setProperty("/spitter.service", "hessianExportedSpitterService");
+        mappings.setProperty("/spitter.service", "burlapExportedSpitterService");
         mapping.setMappings(mappings);
         return mapping;
     }

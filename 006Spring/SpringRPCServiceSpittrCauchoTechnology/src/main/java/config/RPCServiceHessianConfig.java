@@ -1,13 +1,11 @@
 package config;
 
+import com.caucho.burlap.server.BurlapServlet;
 import com.hef.spittr.service.SpitterService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.remoting.caucho.BurlapServiceExporter;
 import org.springframework.remoting.caucho.HessianServiceExporter;
-import org.springframework.web.servlet.HandlerMapping;
-import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
-
-import java.util.Properties;
 
 /**
  * @Date 2019-04-18
@@ -25,10 +23,23 @@ public class RPCServiceHessianConfig {
      *    2.2 在Spring的配置文件中配置一个URL处理器，把Hession服务的URL分发给对应的Hession服务bean
      * @return
      */
-    @Bean
+    /*@Bean
     public HessianServiceExporter hessianExportedSpitterService(SpitterService service){
         HessianServiceExporter exporter = new HessianServiceExporter();
         exporter.setService(service);
+        exporter.setServiceInterface(SpitterService.class);
+        return exporter;
+    }*/
+
+    /**
+     * 方案二： 导出Burlap服务
+     * @param spitterService
+     * @return
+     */
+    @Bean
+    public BurlapServiceExporter burlapExportedSpitterService(SpitterService spitterService){
+        BurlapServiceExporter exporter = new BurlapServiceExporter();
+        exporter.setService(spitterService);
         exporter.setServiceInterface(SpitterService.class);
         return exporter;
     }
