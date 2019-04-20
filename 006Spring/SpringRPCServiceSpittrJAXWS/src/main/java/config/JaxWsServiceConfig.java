@@ -31,7 +31,6 @@ public class JaxWsServiceConfig {
     public SimpleJaxWsServiceExporter jaxWsServiceExporter(){
         SimpleJaxWsServiceExporter exporter = new SimpleJaxWsServiceExporter();
         exporter.setBaseAddress("http://localhost:8088/services/");
-
         return exporter;
     }
 
