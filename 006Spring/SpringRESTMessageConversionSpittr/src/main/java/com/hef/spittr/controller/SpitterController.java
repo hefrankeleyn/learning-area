@@ -25,8 +25,8 @@ public class SpitterController {
     @Autowired
     private SpitterService spitterService;
 
-    @RequestMapping(value = "findSpitterById", method = RequestMethod.GET)
-    public @ResponseBody Spitter findSpitterById(@RequestParam(value = "id", defaultValue = "1") long id){
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public @ResponseBody Spitter findSpitterById(@PathVariable long id){
         Spitter spitter = spitterService.getSpitter(id);
         return spitter;
     }
