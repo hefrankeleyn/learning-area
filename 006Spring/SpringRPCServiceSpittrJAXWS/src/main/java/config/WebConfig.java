@@ -18,14 +18,14 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @ComponentScan(basePackages = {"com.hef.spittr.controller"})
 public class WebConfig implements WebMvcConfigurer {
 
-    /*@Bean
+    @Bean
     public ViewResolver viewResolver(){
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         viewResolver.setPrefix("/WEB-INF/views/");
         viewResolver.setSuffix(".jsp");
         viewResolver.setExposeContextBeansAsAttributes(true);
         return viewResolver;
-    }*/
+    }
 
     /*@Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {

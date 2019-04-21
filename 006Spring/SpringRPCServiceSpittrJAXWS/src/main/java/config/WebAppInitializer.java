@@ -10,7 +10,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     /**
-     * 配置 ContextLoaderListener
+     * 配置 ContextLoaderListener 上下文
      * @return
      */
     @Override
@@ -19,7 +19,7 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
     }
 
     /**
-     * 配置 DispatcherServlet
+     * 配置 DispatcherServlet 上下文
      * @return
      */
     @Override
