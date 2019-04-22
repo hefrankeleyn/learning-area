@@ -23,6 +23,8 @@ public class SpitterServiceImpl implements SpitterService {
         return save;
     }
 
+
+
     @Override
     public Spitter getSpitter(long id) {
         return spitterDao.getOne(id);
@@ -40,5 +42,23 @@ public class SpitterServiceImpl implements SpitterService {
             return spitters.get(0);
         }
         return null;
+    }
+
+    @Override
+    public Spitter updateSpitter(Spitter spitter) {
+        assert spitter.getId() != null;
+        assert spitterDao.findSpitterById(spitter.getId()) != null;
+        Spitter update = spitterDao.save(spitter);
+        return update;
+    }
+
+    @Override
+    public Spitter findSpitterById(Long id) {
+        return spitterDao.findSpitterById(id);
+    }
+
+    @Override
+    public void deleteSpitterById(Long id) {
+        spitterDao.deleteById(id);
     }
 }

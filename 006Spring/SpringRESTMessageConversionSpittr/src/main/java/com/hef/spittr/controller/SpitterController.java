@@ -27,8 +27,20 @@ public class SpitterController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public @ResponseBody Spitter findSpitterById(@PathVariable long id){
-        Spitter spitter = spitterService.getSpitter(id);
+        Spitter spitter = spitterService.findSpitterById(id);
         return spitter;
+    }
+
+
+    @RequestMapping(value = "/updateSpitter/{id}", method = RequestMethod.PUT, consumes = "application/json")
+    public @ResponseBody Spitter updateSpitter(@RequestBody Spitter spitter){
+        return spitterService.updateSpitter(spitter);
+    }
+
+    @RequestMapping(value = "/deleteSpitter/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<String> deleteSpitter(@PathVariable long id){
+        spitterService.deleteSpitterById(id);
+        return new ResponseEntity<>("success",HttpStatus.OK);
     }
 
 
@@ -75,8 +87,8 @@ public class SpitterController {
     public @ResponseBody ResponseEntity<Spitter> saveSpitter(@RequestBody Spitter spitter, UriComponentsBuilder ucb){
         Spitter save = spitterService.saveSpitter(spitter);
         HttpHeaders headers = new HttpHeaders();
-        URI locationUrl = ucb.path("/spitters/findSpitterById").queryParam("id",save.getId()).build().toUri();
-
+//        URI locationUrl = ucb.path("/spitters/findSpitterById").queryParam("id",save.getId()).build().toUri();
+        URI locationUrl = ucb.path("/spitters/").path(String.valueOf(save.getId())).build().toUri();
         headers.setLocation(locationUrl);
         ResponseEntity<Spitter> responseEntity = new ResponseEntity<>(save, headers, HttpStatus.CREATED);
         return responseEntity;

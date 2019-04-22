@@ -11,4 +11,7 @@ import java.util.List;
 public interface SpitterDao extends JpaRepository<Spitter, Long> {
 
     List<Spitter> findSpitterByUsername(String username);
+
+    Spitter findSpitterById(Long id);
+
 }

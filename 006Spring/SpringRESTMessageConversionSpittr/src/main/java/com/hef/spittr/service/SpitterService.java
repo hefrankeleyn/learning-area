@@ -17,4 +17,11 @@ public interface SpitterService {
     List<Spitter> getAllSpitters();
 
     Spitter findSpitterByName(String username);
+
+
+    Spitter updateSpitter(Spitter spitter);
+
+    Spitter findSpitterById(Long id);
+
+    void deleteSpitterById(Long id);
 }
