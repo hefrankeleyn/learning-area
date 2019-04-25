@@ -1,4 +1,4 @@
-package com.hef.algorithms.fundamentals.bags_queues_stacks.exercise1_3;
+package com.hef.algorithms.fundamentals.bags_queues_stacks.exercise1_3.exe32;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
