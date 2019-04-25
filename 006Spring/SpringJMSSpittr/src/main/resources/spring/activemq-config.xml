@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:jms="http://www.springframework.org/schema/jms"
+       xmlns:amq="http://activemq.apache.org/schema/core"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/jms
+       http://www.springframework.org/schema/jms/spring-jms.xsd
+       http://activemq.apache.org/schema/core
+       http://activemq.apache.org/schema/core/activemq-core.xsd">
+
+    <!--  第一步， 创建连接工厂给  -->
+    <!-- 创建连接工厂
+         使用默认的ip和端口
+    -->
+    <!--<bean id="connectionFactory" class="org.apache.activemq.spring.ActiveMQConnectionFactory"/>-->
+    <!--<bean id="connectionFactory" class="org.apache.activemq.spring.ActiveMQConnectionFactory" -->
+          <!--p:brokerURL="tcp://localhost:8161"/>-->
+    <!--
+        创建工厂， 使用amq元素
+    -->
+    <amq:connectionFactory id="connectionFactory" brokerURL="tcp://localhost:8161"/>
+
+    <!-- 声明ActiveMQ消息目的地-->
+    <!--声明一个ActiveMQ队列-->
+    <!-- 声明队列，方法一： -->
+    <bean id="queue" class="org.apache.activemq.command.ActiveMQQueue" c:name="spitter.queue"/>
+    <!-- 声明队列， 方法二： 借助physicalName属性指定消息通道名称 -->
+    <amq:queue id="spitterQueue" physicalName="spitter.alert.queue"/>
+
+
+    <!--声明一个ActiveMQ主题-->
+    <!-- 声明一个主题，方法一： -->
+    <bean id="topic" class="org.apache.activemq.command.ActiveMQTopic" c:name="spitter.topic"/>
+    <!-- 声明一个主题，方法二： -->
+    <amq:topic id="spitterTopic" physicalName="spitter.alert.topic"/>
+</beans>
