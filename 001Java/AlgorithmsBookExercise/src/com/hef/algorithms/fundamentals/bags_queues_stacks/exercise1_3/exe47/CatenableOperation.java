@@ -1,4 +1,4 @@
-package com.hef.algorithms.fundamentals.bags_queues_stacks.exercise1_3.exe46;
+package com.hef.algorithms.fundamentals.bags_queues_stacks.exercise1_3.exe47;
 
 import com.hef.algorithms.fundamentals.bags_queues_stacks.Queue;
 import com.hef.algorithms.fundamentals.bags_queues_stacks.Stack;
