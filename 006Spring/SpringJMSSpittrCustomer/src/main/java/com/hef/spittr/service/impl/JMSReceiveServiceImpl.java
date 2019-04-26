@@ -34,4 +34,5 @@ public class JMSReceiveServiceImpl implements JMSReceiveService {
         }
         return result;
     }
+
 }

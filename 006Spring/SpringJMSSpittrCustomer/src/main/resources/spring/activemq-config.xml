@@ -18,11 +18,11 @@
     -->
     <!--<bean id="connectionFactory" class="org.apache.activemq.spring.ActiveMQConnectionFactory"/>-->
     <!--<bean id="connectionFactory" class="org.apache.activemq.spring.ActiveMQConnectionFactory" -->
-          <!--p:brokerURL="tcp://localhost:8161"/>-->
+          <!--p:brokerURL="tcp://localhost:61616"/>-->
     <!--
         创建工厂， 使用amq元素
     -->
-    <amq:connectionFactory id="connectionFactory" brokerURL="tcp://localhost:8161"/>
+    <amq:connectionFactory id="connectionFactory" brokerURL="tcp://localhost:61616" trustAllPackages="true"/>
 
     <!-- 声明ActiveMQ消息目的地-->
     <!--声明一个ActiveMQ队列-->
@@ -36,5 +36,14 @@
     <!-- 声明一个主题，方法一： -->
     <bean id="topic" class="org.apache.activemq.command.ActiveMQTopic" c:name="spitter.topic"/>
     <!-- 声明一个主题，方法二： -->
-    <amq:topic id="spitterTopic" physicalName="spitter.alert.topic"/>
+    <!--<amq:topic id="spitterTopic" physicalName="spitter.alert.topic"/>-->
+
+    <!---->
+    <!--<bean id="messageConverter" class="org.springframework.jms.support.converter.MappingJackson2MessageConverter"/>-->
+
+    <bean class="config.SpringActiveMQConfig"/>
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate"
+            c:connectionFactory-ref="connectionFactory"
+            p:defaultDestination-ref="topic"
+            p:messageConverter-ref="messageConverter"/>
 </beans>
