@@ -33,6 +33,7 @@
         <jackson-databind.version>2.9.8</jackson-databind.version>
         <spring-jms.version>5.1.4.RELEASE</spring-jms.version>
         <activemq-spring.version>5.15.9</activemq-spring.version>
+        <activemq-core.version>5.7.0</activemq-core.version>
     </properties>
 
     <dependencies>
@@ -211,7 +212,15 @@
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-core</artifactId>
-            <version>5.7.0</version>
+            <version>${activemq-core.version}</version>
+        </dependency>
+
+        <!-- Jackson JSON -->
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-databind.version}</version>
         </dependency>
 
     </dependencies>
