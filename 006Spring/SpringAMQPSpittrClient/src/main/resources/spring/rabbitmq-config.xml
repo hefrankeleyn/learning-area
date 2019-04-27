@@ -8,7 +8,7 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-4.3.xsd
        http://www.springframework.org/schema/rabbit
-       http://www.springframework.org/schema/rabbit/spring-rabbit-1.7.xsd">
+       http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
 
     <context:property-placeholder location="classpath:db.properties"/>
     <!-- 在这里将rabbit作为首选的命名空间，将beans作为第二位命名空间。
@@ -43,7 +43,9 @@
     <queue name="spitter.alert.queue.2"/>
     <queue name="spitter.alert.queue.3"/>
     <queue name="spitter.alerts"/>
-    <direct-exchange name="spitter.alert.exchange">
+    <queue name="spitterAlertQueue"/>
+    <!-- 消费端，只需要知道队列名就行了-->
+    <!--<direct-exchange name="spitter.alert.exchange">
         <bindings>
             <binding queue="spitter.alerts" key="direct.spitter"/>
         </bindings>
@@ -54,7 +56,7 @@
             <binding queue="spitter.alert.queue.2"/>
             <binding queue="spitter.alert.queue.3"/>
         </bindings>
-    </fanout-exchange>
+    </fanout-exchange>-->
 
 
     <!-- 步骤三： 配置RabbitTemplate-->
@@ -63,5 +65,13 @@
     <template id="rabbitTemplate" connection-factory="connectionFactory"
               exchange="spittle.alert.exchange"
               routing-key="direct.spitter"/>
+
+    <beans:bean id="spitterAlertHandler" class="com.hef.spittr.service.impl.SpitterAlertHandlerImpl"/>
+    <!-- 定义消息驱动的 AMQP POJO-->
+    <listener-container connection-factory="connectionFactory">
+        <listener ref="spitterAlertHandler"
+                  method="handleSpitterAlert"
+                  queue-names="spitterAlertQueue"/>
+    </listener-container>
 </beans:beans>
 
