@@ -26,7 +26,12 @@ public class Stack<Item> implements Iterable<Item>{
         N ++;
     }
 
+    public boolean hasNext(){
+        return N > 0;
+    }
+
     public Item pop(){
+        if(isEmpty()) throw new NoSuchElementException("overflow");
         // Remove item from top of stack
         Item item = first.item;
         first = first.next;
