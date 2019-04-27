@@ -36,7 +36,7 @@
     <!-- 声明一个主题，方法一： -->
     <bean id="topic" class="org.apache.activemq.command.ActiveMQTopic" c:name="spitter.topic"/>
     <!-- 声明一个主题，方法二： -->
-    <!--<amq:topic id="spitterTopic" physicalName="spitter.alert.topic"/>-->
+    <amq:topic id="spitterTopic" physicalName="spitter.alert.topic"/>
 
 
 
@@ -54,4 +54,5 @@
           c:connectionFactory-ref="connectionFactory"
           p:defaultDestination-ref="topic"
           p:messageConverter-ref="messageConverter"/>
+
 </beans>
