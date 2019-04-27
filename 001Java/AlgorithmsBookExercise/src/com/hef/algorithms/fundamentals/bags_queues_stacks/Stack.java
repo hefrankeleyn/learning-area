@@ -1,5 +1,6 @@
 package com.hef.algorithms.fundamentals.bags_queues_stacks;
 
+import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -54,19 +55,28 @@ public class Stack<Item> implements Iterable<Item>{
 
     private class ListIterator implements Iterator<Item> {
 
+        private int totalSize = N;
         private Node current = first;
 
         @Override
         public boolean hasNext() {
-
-            return current != null;
+            if (totalSize == N){
+                return current != null;
+            }else{
+                throw new ConcurrentModificationException();
+            }
         }
 
         @Override
         public Item next() {
-            Item item = current.item;
-            current = current.next;
-            return item;
+            if(totalSize == N){
+                Item item = current.item;
+                current = current.next;
+                return item;
+            }else {
+                throw new ConcurrentModificationException();
+            }
+
         }
     }
 
