@@ -46,4 +46,15 @@
             c:connectionFactory-ref="connectionFactory"
             p:defaultDestination-ref="topic"
             p:messageConverter-ref="messageConverter"/>
+
+
+    <!-- 练习第三部分： 创建消息驱动的POJO-->
+    <!--第一步： 将处理器声明为bean-->
+    <bean id="spitterAlertAsychronizationHandler" class="com.hef.spittr.service.impl.SpitterAlertAsychronizationHandlerImpl"/>
+    <!--第二步： 将SpitterAlertAsychronizationHandlerImpl 转变为消息驱动的POJO-->
+    <jms:listener-container>
+        <jms:listener destination="spitter.alert.queue" ref="spitterAlertAsychronizationHandler" method="handleSpittleAlert"/>
+    </jms:listener-container>
+
+
 </beans>
