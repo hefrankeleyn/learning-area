@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.3.xsd
+       http://www.springframework.org/schema/rabbit
+       http://www.springframework.org/schema/rabbit/spring-rabbit-1.7.xsd">
+
+    <!-- 加载配置文件-->
+    <context:property-placeholder location="db.properties"/>
+    <!-- 第一步： 配置RabbitMQ的连接工厂
+         默认情况下： 连接工厂会假设RabbitMQ服务器监听localhost 的 5672 端口，
+         并且用户名和密码均为： guest
+    -->
+    <rabbit:connection-factory id="connectionFactory"/>
+
+
+    <!--第二步： 声明队列、Exchange、binding-->
+    <!-- 一个简单的配置方案：
+    对于简单的消息已经足够了，默认会有一个没有名称的 direct Exchange， 所有的队列都会绑定到这个Exchange上。
+        并且 routing key 与队列的名称相同
+    -->
+    <rabbit:admin connection-factory="connectionFactory"/>
+    <rabbit:queue id="spitterAlertQueue" name="spitter.alert.queue"/>
+
+    <!-- 第三步： 配置RabbitTemplate-->
+    <rabbit:template id="rabbitTemplate" connection-factory="connectionFactory"/>
+</beans>

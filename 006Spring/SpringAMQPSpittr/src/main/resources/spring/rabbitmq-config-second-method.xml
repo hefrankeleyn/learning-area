@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/rabbit"
+       xmlns:beans="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.3.xsd
+       http://www.springframework.org/schema/rabbit
+       http://www.springframework.org/schema/rabbit/spring-rabbit-1.7.xsd">
+
+    <context:property-placeholder location="classpath:db.properties"/>
+    <!-- 在这里将rabbit作为首选的命名空间，将beans作为第二位命名空间。
+         因为在这里更多的声明rabbit而不是bean，这样的话，只会少量的bean元素使用"bean:"前缀，而rabbit元素就能够避免使用前缀了。
+    -->
+    <!-- 第一步： 配置RabbitMQ的连接工厂
+         默认情况下： 连接工厂会假设RabbitMQ服务器监听localhost 的 5672 端口，
+         并且用户名和密码均为： guest
+    -->
+    <connection-factory id="connectionFactory"
+                        host="${rabbitmq.host}"
+                        port="${rabbitmq.port}"
+                        username="${rabbitmq.username}"
+                        password="${rabbitmq.password}"/>
+
+    <!--第二步： 声明队列、Exchange、binding-->
+    <!--方案一： 简单的配置，只需要配置下面两个元素-->
+    <!-- admin 元素会创建一个RabbitMQ 管理组件（administrative component)
+         它会自动创建 元素声明的队列、Excange 以及binding
+    -->
+    <!--<admin connection-factory="connectionFactory"/>-->
+    <!--2.1 声明一个队列
+        对于简单的消息已经足够了，默认会有一个没有名称的 direct Exchange， 所有的队列都会绑定到这个Exchange上。
+        并且 routing key 与队列的名称相同
+    -->
+    <!--<queue id="spitterAlertQueue" name="spitter.alerts"/>-->
+
+
+    <!--方案二： 声明一个或多个Exchange，并且将其绑定到队列上-->
+    <admin connection-factory="connectionFactory"/>
+    <queue name="spitter.alert.queue.1"/>
+    <queue name="spitter.alert.queue.2"/>
+    <queue name="spitter.alert.queue.3"/>
+    <queue name="spitter.alerts"/>
+    <direct-exchange name="spitter.alert.exchange">
+        <bindings>
+            <binding queue="spitter.alerts" key="direct.spitter"/>
+        </bindings>
+    </direct-exchange>
+    <fanout-exchange name="spitter.fanout">
+        <bindings>
+            <binding queue="spitter.alert.queue.1"/>
+            <binding queue="spitter.alert.queue.2"/>
+            <binding queue="spitter.alert.queue.3"/>
+        </bindings>
+    </fanout-exchange>
+
+
+    <!-- 步骤三： 配置RabbitTemplate-->
+    <!--<template id="rabbitTemplate" connection-factory="connectionFactory"/>-->
+    <!-- 配置默认值-->
+    <template id="rabbitTemplate" connection-factory="connectionFactory"
+              exchange="spittle.alert.exchange"
+              routing-key="direct.spitter"/>
+</beans:beans>
+
