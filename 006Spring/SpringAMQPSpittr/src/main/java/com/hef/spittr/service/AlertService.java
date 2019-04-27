@@ -7,4 +7,6 @@ public interface AlertService {
     void sendSpitter(Spitter spitter);
 
     void sendMessage(String message);
+
+    void sendHandlerSpitter(Spitter spitter);
 }

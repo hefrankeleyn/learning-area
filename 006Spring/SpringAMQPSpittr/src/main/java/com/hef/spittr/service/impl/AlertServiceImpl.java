@@ -32,4 +32,9 @@ public class AlertServiceImpl implements AlertService {
         Message helloMessage = new Message(message.getBytes(), new MessageProperties());
         rabbitTemplate.send("spitter.fanout", "message", helloMessage);
     }
+
+    @Override
+    public void sendHandlerSpitter(Spitter spitter) {
+        rabbitTemplate.convertAndSend("spitter.alert.exchange", "spitterQueue", spitter);
+    }
 }

@@ -43,9 +43,11 @@
     <queue name="spitter.alert.queue.2"/>
     <queue name="spitter.alert.queue.3"/>
     <queue name="spitter.alerts"/>
+    <queue name="spitterAlertQueue"/>
     <direct-exchange name="spitter.alert.exchange">
         <bindings>
             <binding queue="spitter.alerts" key="direct.spitter"/>
+            <binding queue="spitterAlertQueue" key="spitterQueue"/>
         </bindings>
     </direct-exchange>
     <fanout-exchange name="spitter.fanout">
@@ -63,5 +65,6 @@
     <template id="rabbitTemplate" connection-factory="connectionFactory"
               exchange="spittle.alert.exchange"
               routing-key="direct.spitter"/>
+
 </beans:beans>
 
