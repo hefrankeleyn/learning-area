@@ -31,12 +31,14 @@
     <!-- 声明队列， 方法二： 借助physicalName属性指定消息通道名称 -->
     <amq:queue id="spitterQueue" physicalName="spitter.alert.queue"/>
 
+    <!-- 声明一个rpc的queue-->
+    <amq:queue id="rpcQueue" physicalName="spitter.rpc.queue"/>
 
     <!--声明一个ActiveMQ主题-->
     <!-- 声明一个主题，方法一： -->
     <bean id="topic" class="org.apache.activemq.command.ActiveMQTopic" c:name="spitter.topic"/>
     <!-- 声明一个主题，方法二： -->
-    <!--<amq:topic id="spitterTopic" physicalName="spitter.alert.topic"/>-->
+    <amq:topic id="spitterTopic" physicalName="spitter.alert.topic"/>
 
     <!---->
     <!--<bean id="messageConverter" class="org.springframework.jms.support.converter.MappingJackson2MessageConverter"/>-->
@@ -56,5 +58,11 @@
         <jms:listener destination="spitter.alert.queue" ref="spitterAlertAsychronizationHandler" method="handleSpittleAlert"/>
     </jms:listener-container>
 
+
+    <!-- 练习第四部分： 使用基于JMS的服务-->
+    <bean id="jmsrpcService" class="org.springframework.jms.remoting.JmsInvokerProxyFactoryBean"
+          p:connectionFactory-ref="connectionFactory"
+          p:queueName="spitter.rpc.queue"
+          p:serviceInterface="com.hef.spittr.service.JMSRPCService"/>
 
 </beans>
