@@ -31,6 +31,8 @@
     <!-- 声明队列， 方法二： 借助physicalName属性指定消息通道名称 -->
     <amq:queue id="spitterQueue" physicalName="spitter.alert.queue"/>
 
+    <!-- 声明一个rpc的queue-->
+    <amq:queue id="rpcQueue" physicalName="spitter.rpc.queue"/>
 
     <!--声明一个ActiveMQ主题-->
     <!-- 声明一个主题，方法一： -->
@@ -54,5 +56,12 @@
           c:connectionFactory-ref="connectionFactory"
           p:defaultDestination-ref="topic"
           p:messageConverter-ref="messageConverter"/>
+
+    <!-- 练习部分四： 使用基于消息的RPC-->
+    <!-- 导出基于JMS的服务-->
+    <bean class="config.JMSRPCServiceConfig"/>
+    <jms:listener-container>
+        <jms:listener destination="spitter.rpc.queue" ref="jmsInvokerServiceExporter"/>
+    </jms:listener-container>
 
 </beans>

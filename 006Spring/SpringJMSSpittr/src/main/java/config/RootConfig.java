@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @ComponentScan(basePackages = {"com.hef.spittr"}, excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION,
         classes = {EnableWebMvc.class})})
-@Import(value = {SpringDataJpaConfig.class})
+@Import(value = {SpringDataJpaConfig.class, JMSRPCServiceConfig.class})
 @ImportResource(locations = {"classpath:/spring/activemq-config.xml"})
 public class RootConfig {
 }
