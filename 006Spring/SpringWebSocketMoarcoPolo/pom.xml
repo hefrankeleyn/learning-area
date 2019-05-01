@@ -32,6 +32,7 @@
     <spring-data-jpa.version>2.1.6.RELEASE</spring-data-jpa.version>
     <jackson-databind.version>2.9.8</jackson-databind.version>
     <spring-websocket.version>5.1.6.RELEASE</spring-websocket.version>
+    <thymeleaf-spring4.version>3.0.9.RELEASE</thymeleaf-spring4.version>
   </properties>
 
   <dependencies>
@@ -139,6 +140,19 @@
       <version>${apache-commons-lang3.version}</version>
     </dependency>
 
+    <!-- 使用thymeleaf 作为SpringMVC的视图层-->
+    <!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf-spring4 -->
+    <dependency>
+      <groupId>org.thymeleaf</groupId>
+      <artifactId>thymeleaf-spring4</artifactId>
+      <version>${thymeleaf-spring4.version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf -->
+    <dependency>
+      <groupId>org.thymeleaf</groupId>
+      <artifactId>thymeleaf</artifactId>
+      <version>${thymeleaf-spring4.version}</version>
+    </dependency>
 
     <!-- 配置H2数据库 -->
     <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->

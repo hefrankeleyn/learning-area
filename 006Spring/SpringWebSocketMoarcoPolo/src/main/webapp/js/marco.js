@@ -12,7 +12,7 @@ $(document).ready(function(){
 
         sock.onmessage = function(e){
             console.log("Received message; ", e.data);
-            setTimeout(function(){sayMarco()}, 2000);
+            setTimeout(function(){sayMarco(sock)}, 2000);
         }
 
         sock.onclose = function(){
