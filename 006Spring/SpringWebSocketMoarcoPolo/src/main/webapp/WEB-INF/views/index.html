@@ -6,8 +6,17 @@
     <!--
     加载<script>标签，不能写简写的形式
     -->
-    <script type="text/javascript" th:src="@{/js/jquery-3.4.0.min.js}"></script>
-    <script type="text/javascript" th:src="@{/js/marco.js}"></script>
+    <!-- 使用WebSocket-->
+    <!--<script type="text/javascript" th:src="@{/js/marco.js}"></script>-->
+
+    <!--使用SocketJS 方案一：-->
+    <script type="text/javascript" th:src="@{/webjars/sockjs-client/1.1.2/sockjs.min.js}"></script>
+
+    <!-- 使用SocketJS 方案二： -->
+    <!--<script type="text/javascript" src="http://cdn.jsdelivr.net/sockjs/1.0.1/sockjs.min.js"></script>-->
+
+
+    <script type="text/javascript" th:src="@{/js/socketjsMarck.js}"></script>
 </head>
 <body>
 <h2>hello world</h2>

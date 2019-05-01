@@ -8,24 +8,21 @@ import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 
 /**
- * @Date 2019-04-29
+ * @Date 2019-05-01
  * @Author lifei
  */
-//@Configuration
-//@EnableWebSocket
-public class WebSocketConfig implements WebSocketConfigurer {
+@Configuration
+@EnableWebSocket
+public class SockJSConfig implements WebSocketConfigurer {
+
+
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry webSocketHandlerRegistry) {
-        /**
-         * 将 MarcoHandler 映射到 “/marco”
-         */
-        webSocketHandlerRegistry.addHandler(marcoHandler(), "/marco");
+        // 通过 withSockJS() 方法返回 WebSocketHandlerRegistry
+
+        webSocketHandlerRegistry.addHandler(marcoHandler(), "/marco").withSockJS();
     }
 
-    /**
-     * 声明 MarcoHandler bean
-     * @return
-     */
     @Bean
     public MarcoHandler marcoHandler(){
         return new MarcoHandler();
