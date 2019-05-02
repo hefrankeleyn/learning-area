@@ -2,6 +2,7 @@ package com.hef.marco.controller;
 
 import com.hef.marco.domain.Shout;
 import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 
 import java.util.logging.Logger;
@@ -25,6 +26,7 @@ public class MarcoController {
 //    }
 
     @MessageMapping("/marco")
+    @SendTo(value = "/topic/marco")
     public Shout handleShout(Shout incoming){
         logger.info("Received message: " + incoming.getMessage());
 

@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Spittles</title>
+    <script type="text/javascript" th:src="@{/webjars/sockjs-client/1.1.2/sockjs.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/stomp-websocket/2.3.3-1/stomp.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery-3.4.0.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{/js/spittle.js}"></script>
 </head>
 <body>
     <div th:if="${spittleList!=null}">
-        <ul>
+        <ul id="spittle_list">
             <li th:each="spittle:${spittleList}">
                 <span th:text="${spittle.id}"></span><br>
                 <span th:text="${spittle.message}"></span><br>

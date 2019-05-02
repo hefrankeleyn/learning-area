@@ -3,7 +3,7 @@ package com.hef.marco.service.impl;
 import com.hef.marco.domain.Spittle;
 import com.hef.marco.service.SpittleFeedService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class SpittleFeedServiceImpl implements SpittleFeedService {
 
     @Autowired
-    private SimpMessagingTemplate messaging;
+    private SimpMessageSendingOperations messaging;
 
 
     @Override

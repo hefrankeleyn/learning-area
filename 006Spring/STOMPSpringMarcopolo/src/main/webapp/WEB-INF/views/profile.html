@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>profile</title>
+    <script type="text/javascript" th:src="@{/js/jquery-3.4.0.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/profile.js}"></script>
 </head>
 <body>
-    <div th:if="${spitter!=null}">
+    <div th:if="${spitter!=null}" id="spitter">
         <p th:object="${spitter}">
-            <span th:text="*{username}"></span>
-            (<span th:text="*{firstName}"></span>,<span th:text="*{lastName}"></span>)
+            <input type="hidden" name="id" th:value="*{id}"/>
+            <span th:text="*{fullName}"></span>
+            (<span th:text="*{username}"></span>,<span th:text="*{email}"></span>)
         </p>
-
+        <button name="add_spittle" id="add">Add Spittle</button>
     </div>
-    <div id="add_spittle">
-        <form method="post" th:action="@{/spittleController/}">
+    <div id="spittle">
+        <h2>Please add Spittle:</h2>
+        <form method="post" th:action="@{/spittleController/save}">
 
             <input name="spitter" type="hidden">
-            <label>Message:</label><input name="message"/>
-            <label>Latitude:</label><input name="latitude"/>
-            <label>Longitude:</label><input name="longitude"/>
+            <label>Message:</label><input name="message"/><br>
+            <label>Latitude:</label><input name="latitude"/><br>
+            <label>Longitude:</label><input name="longitude"/><br>
+            <input type="submit" value="Save"/>
         </form>
     </div>
 </body>

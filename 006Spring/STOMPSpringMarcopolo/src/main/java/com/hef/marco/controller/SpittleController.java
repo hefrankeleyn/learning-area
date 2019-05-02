@@ -1,6 +1,7 @@
 package com.hef.marco.controller;
 
 import com.hef.marco.domain.Spittle;
+import com.hef.marco.service.SpittleFeedService;
 import com.hef.marco.service.SpittleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,9 @@ public class SpittleController {
     @Autowired
     private SpittleService spittleService;
 
+    @Autowired
+    private SpittleFeedService spittleFeedService;
+
     @RequestMapping(value = "/showSpittles", method = RequestMethod.GET)
     public String showSpittles(Model model){
         List<Spittle> spittleList = spittleService.findAllSpittle();
@@ -34,6 +38,8 @@ public class SpittleController {
         spittle.setTime(new Date());
         Spittle save = spittleService.saveSpittle(spittle);
         model.addAttribute(save);
+        // 将消息直接发给客户端
+        spittleFeedService.broadcastSpittle(save);
         return "spittle";
     }
 
