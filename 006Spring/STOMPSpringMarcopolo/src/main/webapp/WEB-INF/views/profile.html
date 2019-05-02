@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>profile</title>
+</head>
+<body>
+    <div th:if="${spitter!=null}">
+        <p th:object="${spitter}">
+            <span th:text="*{username}"></span>
+            (<span th:text="*{firstName}"></span>,<span th:text="*{lastName}"></span>)
+        </p>
+
+    </div>
+    <div id="add_spittle">
+        <form method="post" th:action="@{/spittleController/}">
+
+            <input name="spitter" type="hidden">
+            <label>Message:</label><input name="message"/>
+            <label>Latitude:</label><input name="latitude"/>
+            <label>Longitude:</label><input name="longitude"/>
+        </form>
+    </div>
+</body>
+</html>

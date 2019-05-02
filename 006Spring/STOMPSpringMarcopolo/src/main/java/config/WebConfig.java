@@ -1,5 +1,6 @@
 package config;
 
+import org.hibernate.sql.Template;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +10,6 @@ import org.springframework.web.servlet.config.annotation.DefaultServletHandlerCo
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
@@ -19,30 +19,16 @@ import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 import javax.servlet.ServletContext;
 
 /**
- * @Date 2019-04-29
+ * @Date 2019-05-01
  * @Author lifei
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.hef.ws.controller"})
-@Import(value = {SockJSConfig.class})
+@ComponentScan(basePackages = {"com.hef.marco.controller"})
 public class WebConfig implements WebMvcConfigurer {
 
     /**
-     * 视图解析器
-     * @return
-     */
-    /*@Bean
-    public ViewResolver viewResolver(){
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("/WEB-INF/views/");
-        viewResolver.setSuffix(".jsp");
-        viewResolver.setExposeContextBeansAsAttributes(true);
-        return viewResolver;
-    }*/
-
-    /**
-     * 配置thymelaf视图解析器， 将逻辑视图名解析为Thymeleaf模板视图
+     * 配置视图解析器， 将逻辑视图名解析为Thymeleaf模板视图
      * @return
      */
     @Bean
@@ -53,8 +39,7 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     /**
-     * 处理模板并渲染结果
-     * @param templateResolver
+     * 处理模板，并渲染视图
      * @return
      */
     @Bean
@@ -66,25 +51,16 @@ public class WebConfig implements WebMvcConfigurer {
 
     /**
      * 用于加载Thymeleaf模板
-     * @param servletContext
      * @return
      */
     @Bean
     public ITemplateResolver templateResolver(ServletContext servletContext){
         ServletContextTemplateResolver templateResolver =
                 new ServletContextTemplateResolver(servletContext);
-
         templateResolver.setPrefix("/WEB-INF/views/");
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode("HTML5");
         return templateResolver;
-    }
-
-
-
-    @Override
-    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-        configurer.enable();
     }
 
     /**
@@ -95,5 +71,10 @@ public class WebConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/webjars/**")
                 .addResourceLocations("classpath:/META-INF/resources/webjars/");
+    }
+
+    @Override
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
     }
 }

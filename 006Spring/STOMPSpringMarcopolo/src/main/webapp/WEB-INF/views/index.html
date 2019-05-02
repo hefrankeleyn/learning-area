@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--使用SocketJS 方案一：-->
+    <script type="text/javascript" th:src="@{/webjars/sockjs-client/1.1.2/sockjs.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/stomp-websocket/2.3.3-1/stomp.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{js/marco.js}"></script>
+</head>
+<body>
+<h2>hello world</h2>
+<div>
+    <button id="marco">Send to Marco</button>
+</div>
+<p>
+    <a th:href="@{/spitterController/spitter}">profile</a>
+</p>
+<p>
+    <a th:href="@{/spittleController/showSpittles}">show spittles</a>
+</p>
+</body>
+</html>
