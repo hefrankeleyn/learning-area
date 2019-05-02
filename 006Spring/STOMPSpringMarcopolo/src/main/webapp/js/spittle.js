@@ -5,10 +5,10 @@ window.onload = function(){
   var stomp = Stomp.over(sock);
   stomp.connect("guest", "guest", function(){
       console.log("Connected.");
-      stomp.subscribe("/topic/spittlefeed", handleSpittle);
-      // stomp.subscribe("/topic/marco", handleMarco);
+      // stomp.subscribe("/topic/spittlefeed", handleSpittle);
+      stomp.subscribe("/topic/marco", handleMarco);
       console.log("hello world");
-      // sendMes();
+      sendMes();
   });
 
   function handleMarco(incoming) {

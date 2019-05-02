@@ -45,7 +45,7 @@ public class WebSocketStompConfig implements WebSocketMessageBrokerConfigurer {
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         // 第一行， 启用STOMP代理中继（broker relay) 功能）
         // 默认情况下，STOMP代理中继会假设代理监听localhost的61613端口，并且客户端的username和password均为guest
-        registry.enableStompBrokerRelay("/topic", "queue");
+        registry.enableStompBrokerRelay("/topic", "/queue");
         // 第二行， 所有目的地以“/app”打头的消息都会路由到带有 @MessageMapping注解的方法中，而不会发布到代理队列或主题中
         // 注意，也可以配置多个应用前缀
         registry.setApplicationDestinationPrefixes("/app");
@@ -59,7 +59,7 @@ public class WebSocketStompConfig implements WebSocketMessageBrokerConfigurer {
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         // 第一行， 启用STOMP代理中继（broker relay) 功能）
         // 默认情况下，STOMP代理中继会假设代理监听localhost的61613端口，并且客户端的username和password均为guest
-        registry.enableStompBrokerRelay("/topic", "queue")
+        registry.enableStompBrokerRelay("/topic", "/queue")
                 .setRelayHost("localhost")
                 .setRelayPort(5672)
                 .setClientLogin("guest")
