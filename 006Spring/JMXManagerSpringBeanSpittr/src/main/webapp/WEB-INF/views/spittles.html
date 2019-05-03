@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spittles</title>
+</head>
+<body>
+    <h1>Show some spittles</h1>
+    <div th:if="${spittleList!=null}">
+        <ul id="spittle_list">
+            <li th:each="spittle:${spittleList}">
+                <span th:text="${spittle.id}"></span><br>
+                <span th:text="${spittle.message}"></span><br>
+                (<span th:text="${spittle.latitude}"></span>,
+                <span th:text="${spittle.longitude}"></span>)
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
