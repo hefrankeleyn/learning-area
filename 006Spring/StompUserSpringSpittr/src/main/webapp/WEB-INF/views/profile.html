@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>profile</title>
+    <!--使用SocketJS 方案一：-->
+    <script type="text/javascript" th:src="@{/webjars/sockjs-client/1.1.2/sockjs.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/stomp-websocket/2.3.3-1/stomp.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery-3.4.0.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/profile.js}"></script>
+</head>
+<body>
+    <div th:if="${spitter!=null}" id="spitter">
+        <p th:object="${spitter}">
+            <input type="hidden" name="id" th:value="*{id}"/>
+            <span th:text="*{fullName}"></span>
+            (<span th:text="*{username}"></span>,<span th:text="*{email}"></span>)
+        </p>
+        <button name="add_spittle" id="add">Add Spittle</button>
+    </div>
+    <div id="spittle">
+        <h2>Please add Spittle:</h2>
+        <p>
+            <input name="spitter" type="hidden">
+            <label>Message:</label><input name="message"/><br>
+            <label>Latitude:</label><input name="latitude"/><br>
+            <label>Longitude:</label><input name="longitude"/><br>
+            <button id="save">SaveSpitter</button>
+        </p>
+    </div>
+</body>
+</html>

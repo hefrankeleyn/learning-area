@@ -61,7 +61,7 @@ public class WebSocketStompConfig implements WebSocketMessageBrokerConfigurer {
         // 默认情况下，STOMP代理中继会假设代理监听localhost的61613端口，并且客户端的username和password均为guest
         registry.enableStompBrokerRelay("/topic", "/queue")
                 .setRelayHost("localhost")
-                .setRelayPort(5672)
+                .setRelayPort(61613z)
                 .setClientLogin("guest")
                 .setClientPasscode("guest");
         // 第二行， 所有目的地以“/app”打头的消息都会路由到带有 @MessageMapping注解的方法中，而不会发布到代理队列或主题中
