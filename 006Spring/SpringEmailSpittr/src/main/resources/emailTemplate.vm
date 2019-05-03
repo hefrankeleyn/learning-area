@@ -1,0 +1,8 @@
+<html>
+<body>
+<h1>${spitterName} says..</h1>
+<i>${spitterText}</i>
+<img src="cid:spitterLogo">
+
+</body>
+</html>

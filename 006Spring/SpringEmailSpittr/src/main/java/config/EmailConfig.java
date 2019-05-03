@@ -1,12 +1,15 @@
 package config;
 
+import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
-import org.springframework.mail.MailSender;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.ui.velocity.VelocityEngineFactoryBean;
+
+import java.util.Properties;
 
 /**
  * @Date 2019-05-03
@@ -33,4 +36,20 @@ public class EmailConfig {
         mailSender.setPassword(environment.getProperty("mailserver.password"));
         return mailSender;
     }
+
+    /**
+     * 配置Velocity， 用于构建Email消息
+     * 从类路径下加载Velocity模板
+     * @return
+     */
+    @Bean
+    public VelocityEngineFactoryBean velocityEngineFactoryBean(){
+        VelocityEngineFactoryBean velocityEngineFactoryBean = new VelocityEngineFactoryBean();
+        Properties properties = new Properties();
+        properties.setProperty("resource.loader", "class");
+        properties.setProperty("class.resource.loader.class", ClasspathResourceLoader.class.getName());
+        velocityEngineFactoryBean.setVelocityProperties(properties);
+        return velocityEngineFactoryBean;
+    }
+
 }
