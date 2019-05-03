@@ -31,4 +31,11 @@ public class SpitterEmailServiceTest {
                 "hefrankeleyn@gmail.com", true);
         spitterEmailService.sendSimpleSpittleEmail(spitter);
     }
+
+    @Test
+    public void sendAttachmentMailTest(){
+        Spitter spitter = new Spitter("Xiao xi", "xiao", "password",
+                "hefrankeleyn@163.com", true);
+        spitterEmailService.sendSpittleEmailWithAttachment(spitter);
+    }
 }

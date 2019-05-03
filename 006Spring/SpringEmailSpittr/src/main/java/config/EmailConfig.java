@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.mail.MailSender;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 /**
@@ -23,14 +24,13 @@ public class EmailConfig {
      * @return
      */
     @Bean
-    public MailSender mailSender(Environment environment){
+    public JavaMailSender mailSender(Environment environment){
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setHost(environment.getProperty("mailserver.host"));
 //        mailSender.setPort(Integer.parseInt(environment.getProperty("mailserver.post")));
         // 如果邮件服务器需要认证的话，还需要设置username 和 password 属性
         mailSender.setUsername(environment.getProperty("mailserver.username"));
         mailSender.setPassword(environment.getProperty("mailserver.password"));
-        System.out.println(mailSender);
         return mailSender;
     }
 }
