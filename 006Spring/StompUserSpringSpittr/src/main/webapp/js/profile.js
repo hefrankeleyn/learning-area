@@ -7,6 +7,9 @@ $(document).ready(function () {
   spittle.hide();
   console.info(id);
 
+  // 连接 /topic/spittlefeed 端点
+  listenMessage();
+
   $("#add").click(function () {
     //input.hide();
     console.log("hello world");
@@ -27,9 +30,13 @@ $(document).ready(function () {
       /**
        * 将会通过UserDestinationMessageHandler进行处理， UserDestinationMessaeHandler的主要任务是将用户消息重新路由到某个用户独有的目的地上
        */
-      stomp.subscribe("/user/queue/notifications", saveOk());
+      stomp.subscribe("/user/queue/notifications", saveOk);
       stomp.send("/app/spittle", {}, generateSpittr());
+      stomp.send("/app/shout",{}, generateSpittr())
     });
+
+    spitter.show();
+    spittle.hide();
   });
 
   function saveOk(incomming) {
@@ -41,6 +48,27 @@ $(document).ready(function () {
     var latitude = $("#spittle input[name='latitude']").attr("latitude");
     var longitude = $("#spittle input[name='longitude']").attr("longitude");
     return JSON.stringify({"message":message, "latitude": latitude, "longitude": longitude});
+  }
+
+
+  function listenMessage(){
+    var url = "http://" + window.location.host + "/StompUserSpringSpittr/spittr";
+    var sock = new SockJS(url);
+
+    var stomp = Stomp.over(sock);
+
+    stomp.connect("guest", "guest", function () {
+      // 注意，这个目的地使用了User作为前缀
+      /**
+       * 将会通过UserDestinationMessageHandler进行处理， UserDestinationMessaeHandler的主要任务是将用户消息重新路由到某个用户独有的目的地上
+       */
+      stomp.subscribe("/topic/spittlefeed", pringMessage);
+    });
+  }
+
+  function pringMessage(incoming) {
+    console.log(incoming)
+    console.log("Receive message success!")
   }
 
 });
