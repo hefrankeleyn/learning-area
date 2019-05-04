@@ -55,6 +55,18 @@
       <artifactId>h2</artifactId>
     </dependency>
 
+    <!--通过Actuator获取了解应用内部的情况-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-actuator</artifactId>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+
+
   </dependencies>
 
   <properties>
