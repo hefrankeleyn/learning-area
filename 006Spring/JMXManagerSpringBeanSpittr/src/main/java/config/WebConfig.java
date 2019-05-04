@@ -1,9 +1,6 @@
 package config;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
+import org.springframework.context.annotation.*;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -22,7 +19,9 @@ import javax.servlet.ServletContext;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.hef.spittr.controller"})
+@ComponentScan(basePackages = {"com.hef.spittr"})
+@Import(value = {MBeanConfig.class})
+@ImportResource(value = {"classpath:/jmx/jmx-config.xml"})
 public class WebConfig implements WebMvcConfigurer {
 
     /**

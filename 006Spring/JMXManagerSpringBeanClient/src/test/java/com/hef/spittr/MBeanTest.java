@@ -16,14 +16,14 @@ import java.util.Set;
  * @Date 2019-05-03
  * @Author lifei
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {RootConfig.class})
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@ContextConfiguration(classes = {RootConfig.class})
 public class MBeanTest {
 
-    @Autowired
+//    @Autowired
     private MBeanServerConnection mBeanServerConnection;
 
-    @Test
+//    @Test
     public void shouldNotNull(){
         Assert.assertNotNull(mBeanServerConnection);
     }
@@ -31,7 +31,7 @@ public class MBeanTest {
     /**
      * 查询MBean的名称
      */
-    @Test
+//    @Test
     public void showMBeanName(){
         try {
             Set<ObjectName> mbeanNames = mBeanServerConnection.queryNames(null, null);
@@ -47,10 +47,10 @@ public class MBeanTest {
     /**
      * 获取属性值
      */
-    @Test
+    //@Test
     public void showSpittleName(){
         try {
-            Object spittlesPerPage = mBeanServerConnection.getAttribute(new ObjectName("spitter:name=SpittleController"),
+            Object spittlesPerPage = mBeanServerConnection.getAttribute(new ObjectName("spittle:name=SpittleController"),
                     "SpittlesPerPage");
             System.out.println(spittlesPerPage);
         } catch (Exception e) {
@@ -61,10 +61,10 @@ public class MBeanTest {
     /**
      * 设置值
      */
-    @Test
+    //@Test
     public void reSetSpittlesPerPage(){
         try {
-            mBeanServerConnection.setAttribute(new ObjectName("spitter:name=SpittleController"),
+            mBeanServerConnection.setAttribute(new ObjectName("spittle:name=SpittleController"),
                     new Attribute("SpittlesPerPage", 3));
         } catch (Exception e) {
             e.printStackTrace();
@@ -74,10 +74,10 @@ public class MBeanTest {
     /**
      * 通过调用方法设置值
      */
-    @Test
+//    @Test
     public void invokSetSpittlesPerPage(){
         try {
-            mBeanServerConnection.invoke(new ObjectName("spitter:name=SpittleController"),
+            mBeanServerConnection.invoke(new ObjectName("spittle:name=SpittleController"),
                     "setSpittlesPerPage", new Object[]{5}, new String[]{"int"});
         } catch (Exception e) {
             e.printStackTrace();
