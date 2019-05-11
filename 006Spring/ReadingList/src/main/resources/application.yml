@@ -1,0 +1,45 @@
+
+spring:
+  profiles:
+    active: development
+  main:
+    banner-mode: "off"
+
+# 关闭Spring boot艺术字： spring.main.banner-mode=off
+
+
+tobao:
+  associateId: haha-20
+
+
+---
+spring:
+  profiles: development
+# 开发环境下关闭缓存
+  thymeleaf:
+    cache: false
+  datasource:
+    url: jdbc:h2:tcp://localhost:9092/~/Documents/opt/servers/h2databases/spittr
+    username: spittr
+    password: spittr
+  jpa:
+    hibernate:
+      ddl-auto: none
+# 修改服务器端口
+
+server:
+  port: 8000
+  ssl:
+    # 使服务器提供HTTPS服务
+    key-store: file:///Users/lifei/innertomcatkeys.jks
+    key-store-password: wordpass
+    key-password: wordpass
+---
+spring:
+  profiles: production
+
+# 生产环境下开启缓存
+  thymeleaf:
+    cache: true
+---
+
