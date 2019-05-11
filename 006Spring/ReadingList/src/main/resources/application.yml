@@ -34,6 +34,18 @@ server:
     key-store: file:///Users/lifei/innertomcatkeys.jks
     key-store-password: wordpass
     key-password: wordpass
+
+logging:
+  # 修改将日志写的地方
+  path: /Users/lifei/Documents/opt/logs/
+#   path和file不能同时使用，否则只有file生效
+#  file: ReadingList.log
+  #修改日志的级别
+  level:
+    root: WARN
+    org:
+      springframework:
+        security: DEBUG
 ---
 spring:
   profiles: production
