@@ -31,15 +31,8 @@ public class ReadingListController {
     private String associateId;
 
     @RequestMapping(value = "/{reader}", method = RequestMethod.GET)
-    public String readersBooks(HttpServletRequest request, @PathVariable("reader") String reader, Model model){
+    public String readersBooks(@PathVariable("reader") String reader, Model model){
         System.out.println("associateId: " + associateId);
-
-        Principal principal = request.getUserPrincipal();
-        if(!principal.getName().equals(reader)){
-            model.addAttribute("username", reader);
-            return "login";
-        }
-        logger.info("principal: " + principal.getName());
         List<Book> readingList = readingListRepository.findByReader(reader);
         if (readingList != null){
             model.addAttribute("books", readingList);

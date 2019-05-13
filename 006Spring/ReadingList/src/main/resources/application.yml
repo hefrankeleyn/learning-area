@@ -11,7 +11,20 @@ spring:
 tobao:
   associateId: haha-20
 
+# 启用和禁用端点
+#endpoints:
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,health
+#        beans,conditions,env,mappings,metrics,trace
+
+info:
+  ReadingList:
+    email: hefrankeleyn@gmail.com
+    phone: 123123123
 ---
 spring:
   profiles: development
@@ -27,17 +40,17 @@ spring:
       ddl-auto: none
 # 修改服务器端口
 
-server:
-  port: 8000
-  ssl:
-    # 使服务器提供HTTPS服务
-    key-store: file:///Users/lifei/innertomcatkeys.jks
-    key-store-password: wordpass
-    key-password: wordpass
+#server:
+#  port: 8000
+#  ssl:
+#    # 使服务器提供HTTPS服务
+#    key-store: file:///Users/lifei/innertomcatkeys.jks
+#    key-store-password: wordpass
+#    key-password: wordpass
 
-logging:
+#logging:
   # 修改将日志写的地方
-  path: /Users/lifei/Documents/opt/logs/
+#  path: /Users/lifei/Documents/opt/logs/
 #   path和file不能同时使用，否则只有file生效
 #  file: ReadingList.log
   #修改日志的级别
