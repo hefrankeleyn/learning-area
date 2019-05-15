@@ -48,7 +48,7 @@ public class ReadingListControllerTest {
                 .andExpect(model().attribute("books", is(notNullValue())));
     }
 
-//    @Test
+    @Test
     public void postBook() throws Exception {
         mockMvc.perform(post("/readingList/user")
                         .contentType(MediaType.APPLICATION_FORM_URLENCODED)

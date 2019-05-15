@@ -2,6 +2,7 @@ package com.hef.readinglist;
 
 import com.hef.readinglist.dao.ReaderRepository;
 import com.hef.readinglist.domain.Reader;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,10 @@ public class ReaderDaoTest {
     private ReaderRepository readerRepository;
 
     @Test
+    public void shouldNotNull(){
+        Assert.assertNotNull(readerRepository);
+    }
+//    @Test
     public void saveReader(){
         BCryptPasswordEncoder en = new BCryptPasswordEncoder();
         Reader reader = new Reader();
