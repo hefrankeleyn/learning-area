@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/controller">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="check1" name="example">
+                <label class="custom-control-label" for="check1">Check this custom checkbox</label>
+            </div>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="switch1" name="switch1">
+                <label class="custom-control-label" for="switch1">Toggle me</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="radio1" name="radio1">
+                <label class="custom-control-label" for="radio1">Radio</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="radio2" name="radio1">
+                <label class="custom-control-label" for="radio2">World</label>
+            </div>
+            <select name="cars" class="custom-select custom-select-lg">
+                <option selected>Custom Select Menu</option>
+                <option value="vo">Vo</option>
+                <option value="fir">Fir</option>
+                <option value="audi">Audi</option>
+            </select>
+            <label for="customRange">Custom Range</label>
+            <input type="range" class="custom-range" id="customRange" name="point1">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile" type="file">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
