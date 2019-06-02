@@ -12,49 +12,51 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    /**
-     * 基于内存的用户存储
-     * inMemoryAuthentication() 启动用户存储
-     * @param auth
-     * @throws Exception
-     */
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        //super.configure(auth);
-        // 用两个用户来配置内存用户存储
-        auth.inMemoryAuthentication()
-                .withUser("user").password("password").roles("USER").and()
-                .withUser("admin").password("password").roles("USER", "ADMIN");
-    }
+```java
+/**
+ * 基于内存的用户存储
+ * inMemoryAuthentication() 启动用户存储
+ * @param auth
+ * @throws Exception
+ */
+@Override
+protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    //super.configure(auth);
+    // 用两个用户来配置内存用户存储
+    auth.inMemoryAuthentication()
+            .withUser("user").password("password").roles("USER").and()
+            .withUser("admin").password("password").roles("USER", "ADMIN");
+}
 
-    /*@Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(new SpitterUserService());
-    }*/
+/*@Override
+protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    auth.userDetailsService(new SpitterUserService());
+}*/
 
-    /**
-     * 对每个请求进行细粒度安全性控制
-     * @param http
-     * @throws Exception
-     */
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.formLogin()
-                .loginPage("/login")
-             .and()
-                .httpBasic().realmName("SpittrSecurity")
-            .and()// 启用remember me
-            .rememberMe()
-                .tokenValiditySeconds(241920)
-                .key("spittrKey")
-            .and()
-            .authorizeRequests()
-                .antMatchers("/spittles").access("isAuthenticated() and principal.username=='admin'")
-                .antMatchers("/spitters/me").authenticated()
-                .antMatchers(HttpMethod.POST, "/spittles").authenticated()
-                .regexMatchers("/spitters/.*").authenticated()
-                .anyRequest().permitAll();
-        // 配置权限
+/**
+ * 对每个请求进行细粒度安全性控制
+ * @param http
+ * @throws Exception
+ */
+@Override
+protected void configure(HttpSecurity http) throws Exception {
+    http.formLogin()
+            .loginPage("/login")
+         .and()
+            .httpBasic().realmName("SpittrSecurity")
+        .and()// 启用remember me
+        .rememberMe()
+            .tokenValiditySeconds(241920)
+            .key("spittrKey")
+        .and()
+        .authorizeRequests()
+            .antMatchers("/spittles").access("isAuthenticated() and principal.username=='admin'")
+            .antMatchers("/spitters/me").authenticated()
+            .antMatchers(HttpMethod.POST, "/spittles").authenticated()
+            .regexMatchers("/spitters/.*").authenticated()
+            .anyRequest().permitAll();
+    // 配置权限
+```
 //        http.authorizeRequests()
 //                .antMatchers("/spitters/me").hasAuthority("ROLE_SPITTER")
 //                .antMatchers(HttpMethod.POST, "/spittles").hasAuthority("ROLE_SPITTER")
@@ -67,11 +69,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-    /**
-     * 使用SpEL对每个请求进行细粒度安全性控制
-     * @param http
-     * @throws Exception
-     */
+```java
+/**
+ * 使用SpEL对每个请求进行细粒度安全性控制
+ * @param http
+ * @throws Exception
+ */
+```
    /* @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
@@ -81,9 +85,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/spitter/me")
                     .access("hasRole('ROLE_SPITTER') and hasIpAddress('192.168.1.2')");
-
+    
     }*/
-
+    
     /**
      * 强制通道的安全性
      * @param http
