@@ -1,6 +1,7 @@
 package com.hef.design04.factory;
 
 import com.hef.design04.Pizza;
+import com.hef.design04.ingredient.factory.ChicagoPizzaIngredientFactory;
 import com.hef.design04.pizza.CheesePizza;
 import com.hef.design04.pizza.GreekPizza;
 import com.hef.design04.pizza.PepperoniPizza;
@@ -21,11 +22,11 @@ public class SimplePizzaFactory {
     public Pizza createPizza(String type){
         Pizza pizza = null;
         if (type.equals("cheese")){
-            pizza = new CheesePizza();
+            pizza = new CheesePizza(new ChicagoPizzaIngredientFactory());
         }else if (type.equals("greek")){
-            pizza = new GreekPizza();
+            pizza = new GreekPizza(new ChicagoPizzaIngredientFactory());
         }else if (type.equals("pepperoni")){
-            pizza = new PepperoniPizza();
+            pizza = new PepperoniPizza(new ChicagoPizzaIngredientFactory());
         }
         return pizza;
     }
