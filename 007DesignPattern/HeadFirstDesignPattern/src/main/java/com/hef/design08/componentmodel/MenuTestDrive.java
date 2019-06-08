@@ -25,6 +25,7 @@ public class MenuTestDrive {
         dessertMenu.add(new MenuItem("d1", "good", true, 23.1));
 
         Waitress waitress = new Waitress(allMenus);
-        waitress.printMenu();
+//        waitress.printMenu();
+        waitress.printVegetarianMenu();
     }
 }

@@ -1,5 +1,7 @@
 package com.hef.design08.componentmodel;
 
+import java.util.Iterator;
+
 /**
  * @Date 2019-06-07
  * @Author lifei
@@ -37,4 +39,10 @@ public abstract class MenuComponent {
     public void print(){
         throw new UnsupportedOperationException();
     }
+
+    // 和迭代器模式整合
+    public Iterator createIterator(){
+        throw new UnsupportedOperationException();
+    }
+
 }

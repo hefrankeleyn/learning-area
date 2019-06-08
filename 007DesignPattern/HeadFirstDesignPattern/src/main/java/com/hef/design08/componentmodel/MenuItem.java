@@ -1,5 +1,9 @@
 package com.hef.design08.componentmodel;
 
+import com.hef.design08.componentmodel.iterator.NullIterator;
+
+import java.util.Iterator;
+
 /**
  * @Date 2019-06-07
  * @Author lifei
@@ -46,5 +50,10 @@ public class MenuItem extends MenuComponent{
         }
         System.out.println(", " + getPrice());
         System.out.println("     -- " + getDescription());
+    }
+
+    @Override
+    public Iterator createIterator() {
+        return new NullIterator();
     }
 }
