@@ -6,6 +6,8 @@ package com.hef.design09.statemodel;
  */
 public class GumballMachine {
 
+    private String locatioin;
+
     private State soldState;
     private State soldOutState;
     private State noQuarterState;
@@ -14,6 +16,11 @@ public class GumballMachine {
 
     private State state;
     private int count;
+
+    public GumballMachine(String locatioin, int count){
+        this(count);
+        this.locatioin = locatioin;
+    }
 
     public GumballMachine(int count) {
         soldState = new SoldState(this);
@@ -80,6 +87,10 @@ public class GumballMachine {
         if(count != 0){
             count = count -1;
         }
+    }
+
+    public String getLocatioin() {
+        return locatioin;
     }
 
     @Override

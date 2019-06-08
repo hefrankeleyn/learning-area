@@ -8,6 +8,9 @@ public class GumballMachineTestDrive {
 
     public static void main(String[] args) {
         GumballMachine gumballMachine = new GumballMachine(5);
+        gumballMachine = new GumballMachine("Seattle", 112);
+
+        GumballMonitor gumballMonitor = new GumballMonitor(gumballMachine);
 
         System.out.println(gumballMachine);
 
@@ -22,5 +25,8 @@ public class GumballMachineTestDrive {
         gumballMachine.turncrank();
 
         System.out.println(gumballMachine);
+
+        gumballMonitor.report();
+
     }
 }
