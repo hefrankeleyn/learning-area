@@ -1,5 +1,6 @@
 package com.hef.test;
 
+import com.hef.algorithms.fundamentals.bags_queues_stacks.Queue;
 import org.junit.Test;
 
 import java.util.Random;
@@ -21,5 +22,21 @@ public class MathTest {
         int i = random.nextInt(len);
 
         System.out.println("i: " + i);
+    }
+
+    @Test
+    public void ququeTest(){
+        Queue<String> myQueue = new Queue<>();
+        System.out.println(myQueue.size());
+        myQueue.enqueue("aaa");
+        myQueue.enqueue("bbb");
+        String q01 = myQueue.dequeue();
+        System.out.println(q01);
+        String q02 = myQueue.dequeue();
+        System.out.println(q02);
+        String q03 = myQueue.dequeue();
+        System.out.println(q03);
+        System.out.println(myQueue.size());
+
     }
 }
