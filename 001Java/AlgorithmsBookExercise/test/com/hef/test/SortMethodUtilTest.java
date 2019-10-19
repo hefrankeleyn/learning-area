@@ -34,4 +34,20 @@ public class SortMethodUtilTest {
         SortMethodUtil.shellSort(a);
         System.out.println(Arrays.toString(a));
     }
+
+    @Test
+    public void topButtomMergeSortTest(){
+        Integer[] a = new Integer[]{3, 1, 9, 5, 0, 12, 11, 50, 23};
+        System.out.println(Arrays.toString(a));
+        SortMethodUtil.topBottomMergeSort(a);
+        System.out.println(Arrays.toString(a));
+    }
+
+    @Test
+    public void buttomTopMergeSortTest(){
+        Integer[] a = new Integer[]{3, 1, 9, 5, 0, 12, 11, 50, 23};
+        System.out.println(Arrays.toString(a));
+        SortMethodUtil.bottomToTopMergeSort(a);
+        System.out.println(Arrays.toString(a));
+    }
 }

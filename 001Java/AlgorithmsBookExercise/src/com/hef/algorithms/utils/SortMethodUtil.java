@@ -6,6 +6,8 @@ package com.hef.algorithms.utils;
  */
 public class SortMethodUtil {
 
+    private static Comparable[] aux;
+
     /**
      * 思路：将最小值放到最前面
      * @param a
@@ -45,6 +47,53 @@ public class SortMethodUtil {
                 }
             }
             s = s/3;
+        }
+    }
+
+    /**
+     * 自顶向下归并排序
+     * @param a
+     */
+    public static void topBottomMergeSort(Comparable[] a){
+        aux = new Comparable[a.length];
+        topBottomMergeSort(a, 0, a.length-1);
+    }
+
+    private static void topBottomMergeSort(Comparable[] a, int lo, int hi){
+        if (lo>=hi) return;
+        int mid = lo + (hi-lo)/2;
+        topBottomMergeSort(a, lo, mid);
+        topBottomMergeSort(a, mid+1, hi);
+        merge(a, lo, mid, hi);
+    }
+
+    /**
+     * 自顶向下的归并排序
+     * @param a
+     */
+    public static void bottomToTopMergeSort(Comparable[] a){
+        int N = a.length;
+        aux = new Comparable[N];
+        for (int i = 0; i < N; i++) {
+            aux[i] = a[i];
+        }
+        for (int sz=1; sz<N; sz = sz+sz){
+            for (int i = 0; i < N - sz; i+=sz+sz) {
+                merge(a, i, i+sz-1, Math.min(i+sz+sz-1, a.length-1));
+            }
+        }
+    }
+
+    private static void merge(Comparable[] a, int lo, int mid, int hi){
+        int x =lo, y= mid + 1;
+        for (int i = lo; i<=hi; i++){
+            aux[i] = a[i];
+        }
+        for (int j= lo; j<=hi; j++){
+            if (x>mid) a[j] = aux[y++];
+            else if (y>hi) a[j] = aux[x++];
+            else if (less(aux[x], aux[y])) a[j] = aux[x++];
+            else a[j] = aux[y++];
         }
     }
 
