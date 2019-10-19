@@ -18,4 +18,20 @@ public class SortMethodUtilTest {
         SortMethodUtil.selectionSort(a);
         System.out.println(Arrays.toString(a));
     }
+
+    @Test
+    public void insertionSortTest(){
+        Integer[] a = new Integer[]{3, 1, 9, 5, 0, 12, 11, 50, 23};
+        System.out.println(Arrays.toString(a));
+        SortMethodUtil.insertionSort(a);
+        System.out.println(Arrays.toString(a));
+    }
+
+    @Test
+    public void shellSortTest(){
+        Integer[] a = new Integer[]{3, 1, 9, 5, 0, 12, 11, 50, 23};
+        System.out.println(Arrays.toString(a));
+        SortMethodUtil.shellSort(a);
+        System.out.println(Arrays.toString(a));
+    }
 }
