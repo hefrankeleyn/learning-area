@@ -76,4 +76,24 @@ public class SortMethodUtilTest {
         SortMethodUtil.threeWayQuickSort(b);
         System.out.println(Arrays.toString(b));
     }
+
+    @Test
+    public void heapSortTest(){
+        Integer[] a = new Integer[]{3, 1, 9, 5, 0, 12, 11, 50, 23};
+        System.out.println(Arrays.toString(a));
+        SortMethodUtil.heapSort(a);
+        System.out.println(Arrays.toString(a));
+
+        Integer[] b = new Integer[3];
+        b[0]= 23;
+        SortMethodUtil.swim(b, 0);
+        b[1]=45;
+        SortMethodUtil.swim(b, 1);
+        b[2]=57;
+        SortMethodUtil.swim(b, 2);
+        System.out.println(Arrays.toString(b));
+        SortMethodUtil.heapSort(b);
+        System.out.println(Arrays.toString(b));
+
+    }
 }

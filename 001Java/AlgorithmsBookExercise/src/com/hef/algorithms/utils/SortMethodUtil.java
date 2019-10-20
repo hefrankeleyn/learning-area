@@ -159,6 +159,46 @@ public class SortMethodUtil {
         threeWayQuickSort(a, j+1, hi);
     }
 
+    public static void heapSort(Comparable[] a){
+        if (a == null) return;
+        int N = a.length-1;
+        for (int i=N/2; i>=0; i--){
+            sink(a, i, N);
+        }
+        while (N>0){
+            exch(a, 0, N--);
+            sink(a, 0, N);
+        }
+    }
+
+    /**
+     * begin from 0
+     * @param a
+     * @param i
+     * @param N max index
+     */
+    private static void sink(Comparable[] a, int i, int N){
+        while (i*2+1<N){
+            int j= i*2 + 1;
+            if (j+1<N && less(a[j], a[j+1])) j = j+1;
+            if (less(a[j], a[i])) break;
+            exch(a, j, i);
+            i = j;
+        }
+    }
+
+    /**
+     * index begin from 0
+     * @param a
+     * @param i
+     */
+    public static void swim(Comparable[] a, int i){
+        while (i>0 && less(a[(i+1)/2-1], a[i])){
+            exch(a, (i+1)/2-1, i);
+            i = (i+1)/2-1;
+        }
+    }
+
     public static void arrayShuffle(Comparable[] a){
         if (a == null) return;
         Random random = new Random();
