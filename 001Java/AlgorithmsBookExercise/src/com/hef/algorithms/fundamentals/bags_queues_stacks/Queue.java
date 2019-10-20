@@ -37,11 +37,17 @@ public class Queue<Item> implements Iterable<Item>{
 
     public Item dequeue(){
         // Remove item from the beginning of the list
-        Item item = first.item;
-        first = first.next;
-        if (isEmpty()) last = null;
-        N--;
-        return item;
+        // FIXME: 2019/10/19 li fei
+        if (isEmpty()){
+            last = null;
+            return null;
+        }else {
+            Item item = first.item;
+            first = first.next;
+            N--;
+            if (isEmpty()) last = null;
+            return item;
+        }
     }
 
 
