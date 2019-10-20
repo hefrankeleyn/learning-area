@@ -42,7 +42,12 @@ public class AlertServiceTest {
 
     @Test
     public void sendHandlerTest(){
-        Spitter spitter = spitterService.getSpitter(1l);
+        Spitter spitter = null;
+        spitter = spitterService.getSpitter(1l);
+        System.out.println(spitter);
+        alertService.sendHandlerSpitter(spitter);
+
+        spitter = spitterService.getSpitter(2l);
         System.out.println(spitter);
         alertService.sendHandlerSpitter(spitter);
     }
