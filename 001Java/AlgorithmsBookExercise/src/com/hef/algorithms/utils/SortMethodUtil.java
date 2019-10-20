@@ -1,5 +1,7 @@
 package com.hef.algorithms.utils;
 
+import java.util.Random;
+
 /**
  * @Date 2019/10/19
  * @Author lifei
@@ -94,6 +96,75 @@ public class SortMethodUtil {
             else if (y>hi) a[j] = aux[x++];
             else if (less(aux[x], aux[y])) a[j] = aux[x++];
             else a[j] = aux[y++];
+        }
+    }
+
+    public static void quickSort(Comparable[] a){
+        if (a==null) return;
+        arrayShuffle(a);
+        quickSort(a, 0, a.length-1);
+    }
+
+    private static void quickSort(Comparable[] a, int lo, int hi){
+        if (lo>=hi) return;
+        int j= partition(a, lo, hi);
+        quickSort(a, lo, j-1);
+        quickSort(a, j+1, hi);
+    }
+    private static int partition(Comparable[] a, int lo, int hi){
+        Comparable tem = a[0];
+        int x=lo+1, y=hi;
+        while (x<=y){
+            int c = a[x].compareTo(tem);
+            if (c<=0){
+                x++;
+            }else {
+                exch(a, x, y--);
+            }
+        }
+        exch(a, lo, y);
+        return y;
+    }
+
+    private static int partition02(Comparable[] a, int lo, int hi){
+        int i=lo, j=hi+1;
+        Comparable v = a[lo];
+        while (true){
+            while (less(a[++lo],v)) if (lo==hi) break;
+            while (less(v, a[--hi])) if (hi==lo) break;
+            if (i>=j) break;
+            exch(a, i, j);
+        }
+        exch(a, lo, j);
+        return j;
+    }
+
+    public static void threeWayQuickSort(Comparable[] a){
+        if (a == null) return;
+        arrayShuffle(a);
+        threeWayQuickSort(a, 0, a.length-1);
+    }
+
+    private static void threeWayQuickSort(Comparable[] a, int lo, int hi){
+        if (lo>=hi) return;
+        Comparable tem = a[lo];
+        int i = lo+1, j = hi, mid =lo;
+        while (i<=j){
+            int c = a[i].compareTo(tem);
+            if (c<0) exch(a, i++, mid++);
+            else if(c>0) exch(a, i, j--);
+            else i++;
+        }
+        threeWayQuickSort(a, lo, mid-1);
+        threeWayQuickSort(a, j+1, hi);
+    }
+
+    public static void arrayShuffle(Comparable[] a){
+        if (a == null) return;
+        Random random = new Random();
+        for (int i = 0; i < a.length; i++) {
+            int s = random.nextInt(a.length-i);
+            exch(a, i, s);
         }
     }
 

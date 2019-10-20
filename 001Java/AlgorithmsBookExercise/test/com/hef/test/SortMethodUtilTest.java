@@ -3,6 +3,7 @@ package com.hef.test;
 import com.hef.algorithms.utils.SortMethodUtil;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -49,5 +50,30 @@ public class SortMethodUtilTest {
         System.out.println(Arrays.toString(a));
         SortMethodUtil.bottomToTopMergeSort(a);
         System.out.println(Arrays.toString(a));
+    }
+
+    @Test
+    public void quickSortTest(){
+        Integer[] a = new Integer[]{3, 1, 9, 5, 0, 12, 11, 50, 23};
+        System.out.println(Arrays.toString(a));
+        SortMethodUtil.arrayShuffle(a);
+        System.out.println(Arrays.toString(a));
+        SortMethodUtil.quickSort(a);
+        System.out.println(Arrays.toString(a));
+    }
+
+
+    @Test
+    public void threeWayQuickSortTest(){
+        Integer[] a = new Integer[]{3, 1, 9, 5, 0, 12, 11, 50, 23};
+        System.out.println(Arrays.toString(a));
+        SortMethodUtil.arrayShuffle(a);
+        System.out.println(Arrays.toString(a));
+        SortMethodUtil.threeWayQuickSort(a);
+        System.out.println(Arrays.toString(a));
+        Integer[] b = new Integer[]{5, 1, 12, 5, 1, 12, 11, 5, 11};
+        System.out.println(Arrays.toString(b));
+        SortMethodUtil.threeWayQuickSort(b);
+        System.out.println(Arrays.toString(b));
     }
 }
