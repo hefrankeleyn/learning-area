@@ -30,7 +30,7 @@
     <spring-orm.version>5.1.3.RELEASE</spring-orm.version>
     <hibernate-core.version>5.3.7.Final</hibernate-core.version>
     <spring-data-jpa.version>2.1.6.RELEASE</spring-data-jpa.version>
-    <jackson-databind.version>2.9.8</jackson-databind.version>
+    <jackson-databind.version>2.9.10.8</jackson-databind.version>
     <spring-websocket.version>5.1.6.RELEASE</spring-websocket.version>
     <thymeleaf-spring4.version>3.0.9.RELEASE</thymeleaf-spring4.version>
     <spring-rabbit.version>2.1.5.RELEASE</spring-rabbit.version>
