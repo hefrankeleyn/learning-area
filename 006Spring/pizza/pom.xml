@@ -19,7 +19,7 @@
     <maven.compiler.target>1.7</maven.compiler.target>
     <junit.version>4.11</junit.version>
     <jdk.version>1.8</jdk.version>
-    <spring.version>4.3.18.RELEASE</spring.version>
+    <spring.version>5.3.19</spring.version>
     <aspectj.version>1.9.2</aspectj.version>
     <system-rules.version>1.16.0</system-rules.version>
     <jstl.version>1.2</jstl.version>
