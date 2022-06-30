@@ -32,7 +32,7 @@
         <spring-data-jpa.version>2.1.6.RELEASE</spring-data-jpa.version>
         <amqp-client.version>5.7.0</amqp-client.version>
         <spring-rabbit.version>2.1.5.RELEASE</spring-rabbit.version>
-        <spring-amqp.version>2.1.5.RELEASE</spring-amqp.version>
+        <spring-amqp.version>2.3.11</spring-amqp.version>
     </properties>
 
     <dependencies>
